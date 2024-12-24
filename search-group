@@ -1,0 +1,9 @@
+<div id="search-group">
+  <input
+    type="text"
+    id="search-bar"
+    class="input"
+    placeholder="Find your Recipes"
+  />
+  <button id="search-btn" class="btn btn-primary">SEARCH</button>
+</div>
