@@ -88,6 +88,12 @@ a .logo {
     
 }
 
+.add-btn {
+    font-size: 1.4rem;
+    padding: 1.5rem 2rem;
+    margin: 4px;
+}
+
 /* INPUTS */
 
 .input {
@@ -95,6 +101,12 @@ a .logo {
     border: 0;
     border-radius: var(--border-radius);
     
+}
+
+.add-input {
+    font-size: 2rem;
+    padding: 1rem  2rem;
+    flex-grow: 1;
 }
 
 ::placeholder {
@@ -121,6 +133,7 @@ a .logo {
     flex-grow: 1;
 }
 
+
 /* ICONS */
 
 .icon {
@@ -145,7 +158,7 @@ a .logo {
     width: 15rem;
     border-radius: var(--border-radius);
     background: linear-gradient(90deg, rgb(254, 189, 68), rgb(255, 157, 0));
-
+    margin-bottom: 3rem;
     box-shadow: 0 0 3px black;
 }
 
@@ -155,3 +168,4 @@ a .logo {
     color: white;
     text-shadow: 0 0 3px black;
 }
+
