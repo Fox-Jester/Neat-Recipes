@@ -1,0 +1,50 @@
+
+___TOP-BLOCK!, RECIPE-CONTAINER!___
+
+/// ON DESKTOP ///
+
+1. Top of the page has the logo,
+ a Search Bar, 
+ a Favorite filter button, 
+ and a create recipe button.
+
+
+2. under the top, in the center will be a grid with all the recipes. 3 columns
+
+
+3. the scroll bar will be on the grid so that the top block will always be in view.
+
+
+/// ON SMALLER SCREENS ///
+
+2. Will have 2 columns
+
+
+/// ON MOBILE ///
+
+1.The top block will be a togglable side bar
+
+
+
+___RECIPE-CARDS!___
+
+!option to add picture.
+!discription.
+
+
+___ADD-RECIPE-BUTTON___
+
+!takes you to the Recipe-Creation page to create the recipe.
+
+
+___RECIPE-CREATION-PAGE___
+
+!Lets you add IMG
+
+!Lets you add a quick discription.
+
+!Lets you add ingredients
+
+!Lets you add a time to cook.
+
+!Lets you add Instructions one slanted block at a time.
