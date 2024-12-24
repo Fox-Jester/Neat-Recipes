@@ -1,0 +1,7 @@
+<i class="fa-regular fa-star"></i>
+
+<i class="fa-regular fa-star" style="color: #fea916"></i>
+/* gold star */
+<i class="fa-solid fa-star" style="color: #ffd43b"></i>
+
+<i class="fa-solid fa-file-circle-plus" id="add-recipe"></i>

@@ -1,0 +1,22 @@
+<div id="header-box">
+  <div id="logo">
+    <h1 id="logo-text">Neat <br />Recipes</h1>
+  </div>
+  <div id="search-group">
+    <input
+      type="text"
+      id="search-bar"
+      class="input"
+      placeholder="Find your Recipes"
+    />
+    <button id="search-btn" class="btn btn-primary">SEARCH</button>
+  </div>
+
+  <i
+    class="fa-regular fa-star icon"
+    style="color: #fea916"
+    id="star-filter"
+  ></i>
+
+  <i class="fa-solid fa-file-circle-plus icon" id="add-recipe"></i>
+</div>

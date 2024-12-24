@@ -1,6 +1,6 @@
 
 :root {
-    --btn-color: linear-gradient(turquoise, rgb(49, 204, 189) );
+    --btn-color: linear-gradient(rgb(64, 224, 208), rgb(49, 204, 189) );
     --btn-color-hover: rgb(71, 243, 226);
 
     --border-radius: 40px
@@ -30,10 +30,30 @@ body {
     border-radius: var(--border-radius);
     box-shadow: 0 0 10px grey;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    padding: 1rem;
+    align-items: center;
 }
 
 
+/* logo */
+
+#logo {
+    background: linear-gradient(130deg, orange, tomato);
+    border-radius: 60px;
+    width: 20rem;
+    text-align: center;
+    text-wrap: wrap;
+    margin-right: 1rem;
+
+}
+
+#logo-text {
+    font-size: 2.2rem;
+    padding: 1rem 2rem;
+    color: white;
+    text-shadow: 0 0 3px black;
+}
 
 
 
@@ -74,6 +94,7 @@ body {
     border-radius: var(--border-radius);
     box-shadow: 0 0 3px black;
     display: flex;
+    flex-grow: 1;
 }
 
 #search-btn {
@@ -86,4 +107,19 @@ body {
     font-size: 2rem;
     padding: 1rem  2.5rem;
     flex-grow: 1;
+}
+
+/* ICONS */
+
+.icon {
+    font-size: 6rem;
+    margin: 0 1rem;
+}
+#star-filter {
+    
+
+}
+
+#add-recipe {
+    
 }
