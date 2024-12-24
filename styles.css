@@ -37,7 +37,8 @@ html {
 
 /* logo */
 
-#logo {
+
+.logo {
     background: linear-gradient(130deg, orange, tomato);
     border-radius: 60px;
     width: 15rem;
@@ -47,13 +48,24 @@ html {
 
 }
 
-#logo-text {
+
+.logo-text {
     font-size: 2.2rem;
     padding: 1rem 2rem;
     color: white;
     text-shadow: 0 0 3px black;
 }
 
+a {
+   text-decoration: none;
+}
+
+a .logo {
+  
+    margin: 3rem 3rem;
+    box-shadow: 0 0 3px black;
+   
+}
 
 
 /* BUTTON */
@@ -116,3 +128,21 @@ html {
     margin: 0 1rem;
 }
 
+/* LABLES */
+
+
+.creation-lable {
+    text-align: center;
+    width: 15rem;
+    border-radius: var(--border-radius);
+    background: linear-gradient(90deg, rgb(254, 189, 68), rgb(255, 157, 0));
+
+    box-shadow: 0 0 3px black;
+}
+
+.creation-text {
+    font-size: 2.2rem;
+    padding: 1rem;
+    color: white;
+    text-shadow: 0 0 3px black;
+}
