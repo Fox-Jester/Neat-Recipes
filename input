@@ -1,0 +1,6 @@
+<input
+  type="text"
+  id="search-bar"
+  class="input"
+  placeholder="Find your Recipes"
+/>
