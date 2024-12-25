@@ -94,6 +94,13 @@ a .logo {
     margin: 4px;
 }
 
+.option-btn {
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    margin: 3px;
+
+}
+
 .instruct-btn {
     border-radius: 20px;
     font-size:1.6rem;
@@ -114,7 +121,12 @@ a .logo {
     font-size: 2rem;
     padding: 1rem  2rem;
     flex-grow: 1;
-    
+}
+
+.option-input {
+    font-size: 1.4rem;
+    padding: 0.5rem 1rem;
+    flex-grow: 1;
 }
 
 ::placeholder {
@@ -127,6 +139,13 @@ a .logo {
     box-shadow: 0 0 3px black;
     display: flex;
     flex-grow: 1;
+}
+
+.option-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 5rem;
 }
 
 .instruct-group {
@@ -168,13 +187,16 @@ a .logo {
 /* LABLES */
 
 
-.creation-lable {
+.lable {
     text-align: center;
     width: 15rem;
     border-radius: var(--border-radius);
-    background: linear-gradient(90deg, rgb(254, 189, 68), rgb(255, 157, 0));
     margin-bottom: 2rem;
     box-shadow: 0 0 3px black;
+}
+
+.lable-primary {
+    background: linear-gradient(90deg, rgb(254, 189, 68), rgb(255, 157, 0));
 }
 
 .creation-text {
@@ -182,6 +204,18 @@ a .logo {
     padding: 1rem;
     color: white;
     text-shadow: 0 0 3px black;
+}
+
+.option-lable {
+    margin-top: 2rem;
+    width: 12rem;
+    background: linear-gradient(90deg, turquoise, rgb(111, 255, 241));
+
+}
+
+.option-text {
+    font-size: 1.8rem;
+    padding: 1rem;
 }
 
 #ingrediant-lable {
@@ -238,9 +272,10 @@ a .logo {
 /* OPTION-BOX */
 
 #option-box {
-    box-shadow: 0 0 3px black;
+   
     display: grid;
-    column-gap: 2rem;
-    grid-template-columns: 25rem 25rem;
-    grid-template-rows: 25rem 25rem;
+    column-gap: 12rem;
+    row-gap: 4rem;
+    grid-template-columns: 20rem 20rem;
+    grid-template-rows: 20rem 20rem;
 }

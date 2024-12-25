@@ -1,0 +1,14 @@
+<div class="option-group">
+  <div class="lable option-lable">
+    <h3 class="option-text">Prep Time</h3>
+  </div>
+  <div class="input-group">
+    <input
+      type="text"
+      id="ingrediant-bar"
+      class="input option-input"
+      placeholder="Enter your Ingrediants"
+    />
+    <button class="btn btn-primary option-btn">ENTER</button>
+  </div>
+</div>
