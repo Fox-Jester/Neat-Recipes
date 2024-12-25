@@ -169,3 +169,41 @@ a .logo {
     text-shadow: 0 0 3px black;
 }
 
+/* INGREDIANT LIST */
+
+.ingrediant-list{
+    background-color: aqua;
+}
+
+
+/* TEXT-AREA */
+
+.text-area {
+    font-size: 1.4rem;
+    resize: none;
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    width: 25%;
+    border: 0;
+    box-shadow: 0 0 3px black;
+
+}
+
+.text-area::-webkit-scrollbar-track {
+    border-radius: var(--border-radius);
+    background-color: antiquewhite;
+    margin-block: 1rem;
+  
+    
+}
+
+.text-area::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: turquoise;
+}
+
+
+.text-area::-webkit-scrollbar {
+    margin-block: 1rem;
+  
+}
