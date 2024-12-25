@@ -3,6 +3,9 @@
     --btn-color: linear-gradient(rgb(64, 224, 208), rgb(49, 204, 189) );
     --btn-color-hover: rgb(71, 243, 226);
 
+    --btn-color-secondary:linear-gradient(90deg, rgb(254, 189, 68), rgb(255, 157, 0));
+    --btn-color-secondary-hover: linear-gradient(90deg, rgb(238, 167, 33), rgb(219, 135, 0));
+
     --border-radius: 40px
 
 }
@@ -86,6 +89,14 @@ a .logo {
 .btn-primary:hover {
     background: var(--btn-color-hover);
     
+}
+
+.btn-secondary {
+    background: var(--btn-color-secondary);
+}
+
+.btn-secondary:hover {
+    background: var(--btn-color-secondary-hover);
 }
 
 .add-btn {
@@ -278,4 +289,26 @@ a .logo {
     row-gap: 4rem;
     grid-template-columns: 20rem 20rem;
     grid-template-rows: 20rem 20rem;
+}
+
+.img-btn {
+    font-size: 2rem;
+    display: block;
+    width: 12rem;
+    background: var(--btn-color-secondary);
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 3px black;
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 3px black;
+}
+
+.img-btn:hover {
+    background: var(--btn-color-secondary-hover);
+}
+
+#img-input {
+    display: none;
 }

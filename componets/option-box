@@ -1,1 +1,59 @@
-<div id="option-box"></div>
+<div class="lable lable-primary">
+  <h2 class="creation-text">Optional</h2>
+</div>
+<div id="option-box">
+  <div class="option-group">
+    <div class="lable option-lable">
+      <h3 class="option-text">Prep Time</h3>
+    </div>
+    <div class="input-group">
+      <input
+        type="text"
+        class="input option-input"
+        placeholder="Enter Prep Time"
+      />
+      <button class="btn btn-primary option-btn">ENTER</button>
+    </div>
+  </div>
+
+  <div class="option-group">
+    <div class="lable option-lable">
+      <h3 class="option-text">Cook Time</h3>
+    </div>
+    <div class="input-group">
+      <input
+        type="text"
+        class="input option-input"
+        placeholder="Enter Prep Time"
+      />
+      <button class="btn btn-primary option-btn">ENTER</button>
+    </div>
+  </div>
+
+  <div class="option-group">
+    <div class="lable option-lable">
+      <h3 class="option-text">Servings</h3>
+    </div>
+    <div class="input-group">
+      <input
+        type="text"
+        class="input option-input"
+        placeholder="Enter Prep Time"
+      />
+      <button class="btn btn-primary option-btn">ENTER</button>
+    </div>
+  </div>
+
+  <div class="option-group">
+    <div class="lable option-lable">
+      <h3 class="option-text">Image</h3>
+    </div>
+
+    <label class="img-btn" for="img-input">Set Image</label>
+    <input
+      id="img-input"
+      type="file"
+      accept="image/jpeg, image/png, image/jpg"
+    />
+  </div>
+</div>
