@@ -119,6 +119,18 @@ a .logo {
     margin: 6px;
 }
 
+#finish-recipe-btn {
+    font-size: 3.2rem;
+    margin-top: 8rem;
+    margin-bottom: 12rem;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    border: 0;
+    box-shadow: 0 0 3px black;
+    color: white;
+    text-shadow: 0 0 3px black;
+}
+
 /* INPUTS */
 
 .input {
@@ -204,10 +216,15 @@ a .logo {
     border-radius: var(--border-radius);
     margin-bottom: 2rem;
     box-shadow: 0 0 3px black;
+    margin-top: 10rem;
 }
 
 .lable-primary {
     background: linear-gradient(90deg, rgb(254, 189, 68), rgb(255, 157, 0));
+}
+
+.name-lable {
+    margin-top: 0;
 }
 
 .creation-text {
@@ -229,9 +246,7 @@ a .logo {
     padding: 1rem;
 }
 
-#ingrediant-lable {
-    margin-top: 10rem;
-}
+
 
 /* INGREDIANT LIST */
 
@@ -241,7 +256,7 @@ a .logo {
     height: 20rem;
     width: 50%;
     display: grid;
-    margin-bottom: 10rem;
+    
     margin-top: 2rem;
 }
 

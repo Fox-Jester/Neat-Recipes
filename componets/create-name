@@ -1,0 +1,12 @@
+<div class="creation-lable">
+  <h2 class="creation-text">Name</h2>
+</div>
+<div class="input-group add-group">
+  <input
+    type="text"
+    id="description-bar"
+    class="input add-input"
+    placeholder="Add a Name"
+  />
+  <button class="btn btn-primary add-btn">ENTER</button>
+</div>

@@ -13,6 +13,114 @@
       </div></a
     >
     <div id="creation-container">
+      <div class="lable lable-primary name-lable">
+        <h2 class="creation-text">Name</h2>
+      </div>
+      <div class="input-group add-group">
+        <input
+          type="text"
+          id="description-bar"
+          class="input add-input"
+          placeholder="Add a Name"
+        />
+        <button class="btn btn-primary add-btn">ENTER</button>
+      </div>
+
+      <div class="lable lable-primary">
+        <h2 class="creation-text">Description</h2>
+      </div>
+      <div class="input-group add-group">
+        <input
+          type="text"
+          id="description-bar"
+          class="input add-input"
+          placeholder="Quick description"
+        />
+        <button class="btn btn-primary add-btn">ENTER</button>
+      </div>
+
+      <div id="ingrediant-lable" class="lable lable-primary">
+        <h2 class="creation-text">Ingrediants</h2>
+      </div>
+      <div class="input-group add-group">
+        <input
+          type="text"
+          id="ingrediant-bar"
+          class="input add-input"
+          placeholder="Enter your Ingrediants"
+        />
+        <button class="btn btn-primary add-btn">ENTER</button>
+      </div>
+      <div class="ingrediant-list"></div>
+
+      <div class="lable lable-primary">
+        <h2 class="creation-text">Instructions</h2>
+      </div>
+      <div class="input-group instruct-group">
+        <textarea name="" id="instruction-area" class="text-area"></textarea>
+        <button class="btn btn-primary instruct-btn">ADD</button>
+      </div>
+
+      <div class="lable lable-primary">
+        <h2 class="creation-text">Optional</h2>
+      </div>
+      <div id="option-box">
+        <div class="option-group">
+          <div class="lable option-lable">
+            <h3 class="option-text">Prep Time</h3>
+          </div>
+          <div class="input-group">
+            <input
+              type="text"
+              class="input option-input"
+              placeholder="Enter Prep Time"
+            />
+            <button class="btn btn-primary option-btn">ENTER</button>
+          </div>
+        </div>
+
+        <div class="option-group">
+          <div class="lable option-lable">
+            <h3 class="option-text">Cook Time</h3>
+          </div>
+          <div class="input-group">
+            <input
+              type="text"
+              class="input option-input"
+              placeholder="Enter Prep Time"
+            />
+            <button class="btn btn-primary option-btn">ENTER</button>
+          </div>
+        </div>
+
+        <div class="option-group">
+          <div class="lable option-lable">
+            <h3 class="option-text">Servings</h3>
+          </div>
+          <div class="input-group">
+            <input
+              type="text"
+              class="input option-input"
+              placeholder="Enter Prep Time"
+            />
+            <button class="btn btn-primary option-btn">ENTER</button>
+          </div>
+        </div>
+
+        <div class="option-group">
+          <div class="lable option-lable">
+            <h3 class="option-text">Image</h3>
+          </div>
+
+          <label class="img-btn" for="img-input">Set Image</label>
+          <input
+            id="img-input"
+            type="file"
+            accept="image/jpeg, image/png, image/jpg"
+          />
+        </div>
+      </div>
+
       <div id="img-preview" class="card">
         <div class="card-name-block">
           <h4 class="card-name">NAME</h4>
@@ -24,6 +132,7 @@
           <li>servings: 4</li>
         </ul>
       </div>
+      <button id="finish-recipe-btn" class="btn-secondary">CREATE</button>
     </div>
     <script src="creation-page.js"></script>
   </body>
