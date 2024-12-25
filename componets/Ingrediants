@@ -1,0 +1,13 @@
+<div id="ingrediant-lable" class="creation-lable">
+  <h2 class="creation-text">Ingrediants</h2>
+</div>
+<div class="input-group add-group">
+  <input
+    type="text"
+    id="ingrediant-bar"
+    class="input add-input"
+    placeholder="Enter your Ingrediants"
+  />
+  <button class="btn btn-primary add-btn">ENTER</button>
+</div>
+<div class="ingrediant-list"></div>

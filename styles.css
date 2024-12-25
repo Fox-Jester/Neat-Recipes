@@ -94,6 +94,13 @@ a .logo {
     margin: 4px;
 }
 
+.instruct-btn {
+    border-radius: 20px;
+    font-size:1.6rem;
+    padding: 1.5rem 2rem;
+    margin: 6px;
+}
+
 /* INPUTS */
 
 .input {
@@ -107,6 +114,7 @@ a .logo {
     font-size: 2rem;
     padding: 1rem  2rem;
     flex-grow: 1;
+    
 }
 
 ::placeholder {
@@ -114,12 +122,17 @@ a .logo {
 }
 
 
-#search-group{
+.input-group{
     border-radius: var(--border-radius);
     box-shadow: 0 0 3px black;
     display: flex;
     flex-grow: 1;
 }
+
+.instruct-group {
+    border-radius: 20px;
+}
+
 
 #search-btn {
     font-size: 1.8rem;
@@ -132,6 +145,8 @@ a .logo {
     padding: 1rem  2.5rem;
     flex-grow: 1;
 }
+
+
 
 
 /* ICONS */
@@ -158,7 +173,7 @@ a .logo {
     width: 15rem;
     border-radius: var(--border-radius);
     background: linear-gradient(90deg, rgb(254, 189, 68), rgb(255, 157, 0));
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     box-shadow: 0 0 3px black;
 }
 
@@ -169,23 +184,35 @@ a .logo {
     text-shadow: 0 0 3px black;
 }
 
+#ingrediant-lable {
+    margin-top: 10rem;
+}
+
 /* INGREDIANT LIST */
 
 .ingrediant-list{
-    background-color: aqua;
+    border-radius: 20px;
+    box-shadow: 0 0 3px black;
+    height: 20rem;
+    width: 50%;
+    display: grid;
+    margin-bottom: 10rem;
+    margin-top: 2rem;
 }
 
 
 /* TEXT-AREA */
 
 .text-area {
-    font-size: 1.4rem;
+    font-size: 2rem;
     resize: none;
     border-radius: 20px;
-    padding: 1rem 2rem;
-    width: 25%;
+    padding: 1rem 1.5rem;
+    outline: 0;
     border: 0;
-    box-shadow: 0 0 3px black;
+   
+    flex-grow: 1;
+    margin: 3px;
 
 }
 

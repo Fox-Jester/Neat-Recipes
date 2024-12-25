@@ -1,7 +1,7 @@
 <div class="creation-lable">
   <h2 class="creation-text">Description</h2>
 </div>
-<div id="search-group">
+<div class="input-group add-group">
   <input
     type="text"
     id="description-bar"

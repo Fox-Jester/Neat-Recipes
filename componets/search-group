@@ -1,4 +1,4 @@
-<div id="search-group">
+<div class="input-group">
   <input
     type="text"
     id="search-bar"
