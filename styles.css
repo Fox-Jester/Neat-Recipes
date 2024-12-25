@@ -312,3 +312,19 @@ a .logo {
 #img-input {
     display: none;
 }
+
+#img-preview {
+    width: 30rem;
+    height: 30rem;
+    border: 3px solid black;
+    justify-items: center;
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#img-preview img{
+    width: 25rem;
+    height: 25rem;
+}
