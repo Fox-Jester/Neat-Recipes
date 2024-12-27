@@ -105,6 +105,13 @@ a .logo {
     margin: 4px;
 }
 
+.redo-btn {
+    font-size: 1.6rem;
+    padding: 0.8rem 1rem;
+    border-radius: 50%;
+    margin: 4px;
+}
+
 .option-btn {
     font-size: 1rem;
     padding: 1rem 1.5rem;
@@ -129,6 +136,7 @@ a .logo {
     box-shadow: 0 0 3px black;
     color: white;
     text-shadow: 0 0 3px black;
+   
 }
 
 /* INPUTS */
@@ -246,11 +254,18 @@ a .logo {
     padding: 1rem;
 }
 
+/* INPUT TEXT */
+
+.input-text {
+    font-size: 1.8rem;
+    padding: 1rem 1.5rem;
+
+}
 
 
 /* INGREDIANT LIST */
 
-.ingrediant-list{
+#ingrediant-list{
     border-radius: 20px;
     box-shadow: 0 0 3px black;
     height: 20rem;
