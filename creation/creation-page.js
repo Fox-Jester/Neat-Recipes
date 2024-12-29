@@ -2,19 +2,22 @@
 
 
 const App = {
-
+    
     $: {
-       
+        
         nameGroup: document.querySelector("#name-group"),
-
+        
         
         descriptionGroup: document.querySelector("#description-group"),
-
-     
+        
+        
+        ingrediantInput: document.querySelector("#ingrediant-input"),
+        ingrediantBtn: document.querySelector("#ingrediant-btn"),
         ingrediantList: document.querySelector("#ingrediant-list"),
 
         instructionArea: document.querySelector("#instruction-area"),
         instructionBtn: document.querySelector("#instruction-btn"),
+        instructionList: document.querySelector("#instruction-list"),
 
         prepInput: document.querySelector("#prep-input"),
         prepBtn: document.querySelector("#prep-btn"),
@@ -32,6 +35,7 @@ const App = {
             this.applyName()
             this.applyDescription()
             this.applyIngrediants()
+            this.applyInstructions()
 
         },
     
@@ -44,7 +48,7 @@ const App = {
                 nameBtn.remove();
                 nameInput.remove();
                 
-                App.$.nameGroup.innerHTML = `<p class="input-text">${nameInput.value}</p> <button id="name-redo-btn" class="btn btn-primary redo-btn"><i class="fa-solid fa-rotate-right"></i></button>`
+                this.$.nameGroup.innerHTML = `<p class="input-text">${nameInput.value}</p> <button id="name-redo-btn" class="btn btn-primary redo-btn"><i class="fa-solid fa-rotate-right"></i></button>`
 
                 const redoBtn = document.querySelector("#name-redo-btn");
 
@@ -69,13 +73,13 @@ const App = {
                 descriptionBtn.remove();
                 descriptionInput.remove();
                 
-                App.$.descriptionGroup.innerHTML = `<p class="input-text">${descriptionInput.value}</p> <button id="description-redo-btn" 
+                this.$.descriptionGroup.innerHTML = `<p class="input-text">${descriptionInput.value}</p> <button id="description-redo-btn" 
                 class="btn btn-primary redo-btn"><i class="fa-solid fa-rotate-right"></i></button>`
 
                 const redoBtn = document.querySelector("#description-redo-btn");
 
                 redoBtn.addEventListener("click", (e) => {
-                    App.$.descriptionGroup.innerHTML = `<input type="text" id="description-input" class="input add-input"
+                    this.$.descriptionGroup.innerHTML = `<input type="text" id="description-input" class="input add-input"
                             placeholder="Quick description"/> <button id="description-btn" class="btn btn-primary add-btn">ENTER</button>`
                     this.reapplyDescription();
 
@@ -88,27 +92,44 @@ const App = {
 
 
     applyIngrediants() {
-        const ingrediantInput = document.querySelector("#ingrediant-input");
-        const ingredantBtn =  document.querySelector("#ingrediant-btn");
-        ingredantBtn.addEventListener("click", (e) => {
-            if (ingrediantInput !== null){
+        this.$.ingrediantBtn.addEventListener("click", (e) => {
+            if (this.$.ingrediantInput !== null){
                 const wrapper = document.createElement("div")
-                wrapper.classList.add("ingrediant-group");
-                wrapper.innerHTML = `<p class="imput-text">${ingrediantInput.value}</p> <button class="btn  
+                wrapper.classList.add("instruction-group");
+                wrapper.innerHTML = `<p class="imput-text">${this.$.ingrediantInput.value}</p> <button class="btn  
                 x-btn" ><i class="fa-solid fa-x"></i></i></button>`
 
                 this.$.ingrediantList.appendChild(wrapper);
-                ingrediantInput.value = "";
-                    let xBtn = document.querySelectorAll(".x-btn")
-                    xBtn.forEach((btn) => 
+                this.$.ingrediantInput.value = "";
+                    let xBtns = document.querySelectorAll(".x-btn")
+                    xBtns.forEach((btn) => 
                         btn.removeEventListener("click", this.delete));
-                    xBtn.forEach((btn) => 
+                    xBtns.forEach((btn) => 
                         btn.addEventListener("click", this.delete));
           
 
                 
             }
         })
+    },
+
+    applyInstructions() {
+        this.$.instructionBtn.addEventListener("click", (e) => {
+            if (this.$.instructionArea.value !== null){
+                const wrapper = document.createElement("div")
+                wrapper.classList.add("instruction-group");
+                wrapper.innerHTML = `<li class="imput-text">${this.$.instructionArea.value}</li> <button class="btn  
+                x-btn" ><i class="fa-solid fa-x"></i></i></button>`
+
+                this.$.instructionList.appendChild(wrapper);
+                this.$.instructionArea.value = "";
+                    let xBtns = document.querySelectorAll(".x-btn")
+                    xBtns.forEach((btn) => 
+                        btn.removeEventListener("click", this.delete));
+                    xBtns.forEach((btn) => 
+                        btn.addEventListener("click", this.delete));
+                }
+            })
     },
 
     delete() {

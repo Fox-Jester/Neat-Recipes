@@ -55,9 +55,7 @@
           class="input add-input"
           placeholder="Enter your Ingrediants"
         />
-        <button id="ingrediant-btn" class="btn btn-primary add-btn">
-          ENTER
-        </button>
+        <button id="ingrediant-btn" class="btn btn-primary add-btn">ADD</button>
       </div>
       <div id="ingrediant-list"></div>
 
@@ -71,6 +69,8 @@
         </button>
       </div>
 
+      <ol id="instruction-list"></ol>
+
       <div class="lable lable-primary">
         <h2 class="creation-text">Optional</h2>
       </div>
@@ -79,51 +79,80 @@
           <div class="lable option-lable">
             <h3 class="option-text">Prep Time</h3>
           </div>
-          <div class="input-group">
+          <div class="input-group-optional">
+            <p class="time-text">Hours</p>
+            <p class="time-text">Minutes</p>
+          </div>
+          <div class="input-group-optional">
             <input
               id="prep-input"
               type="text"
-              class="input option-input"
-              placeholder="Enter Prep Time"
+              maxlength="2"
+              class="input time-input"
+              placeholder="00"
             />
-            <button id="prep-btn" class="btn btn-primary option-btn">
-              ENTER
-            </button>
+            <p class="time-text">:</p>
+            <input
+              id="prep-input"
+              type="text"
+              maxlength="2"
+              class="input time-input"
+              placeholder="00"
+            />
           </div>
+          <button id="prep-btn" class="btn btn-secondary option-btn">
+            ENTER
+          </button>
         </div>
 
         <div class="option-group">
           <div class="lable option-lable">
             <h3 class="option-text">Cook Time</h3>
           </div>
-          <div class="input-group">
-            <input
-              id="cook-input"
-              type="text"
-              class="input option-input"
-              placeholder="Enter Cook Time"
-            />
-            <button id="cook-btn" class="btn btn-primary option-btn">
-              ENTER
-            </button>
+          <div class="input-group-optional">
+            <p class="time-text">Hours</p>
+            <p class="time-text">Minutes</p>
           </div>
+          <div class="input-group-optional">
+            <input
+              id="prep-input"
+              type="text"
+              maxlength="2"
+              class="input time-input"
+              placeholder="00"
+            />
+            <p class="time-text">:</p>
+            <input
+              id="prep-input"
+              type="text"
+              maxlength="2"
+              class="input time-input"
+              placeholder="00"
+            />
+          </div>
+          <button id="prep-btn" class="btn btn-secondary option-btn">
+            ENTER
+          </button>
         </div>
 
         <div class="option-group">
           <div class="lable option-lable">
             <h3 class="option-text">Servings</h3>
           </div>
-          <div class="input-group">
+
+          <div class="input-group-optional">
+            <p class="time-text">Servings :</p>
             <input
               id="serving-input"
               type="text"
-              class="input option-input"
-              placeholder="Enter Servings"
+              class="input time-input"
+              maxlength="3"
             />
-            <button id="serving-btn" class="btn btn-primary option-btn">
-              ENTER
-            </button>
           </div>
+
+          <button id="serving-btn" class="btn btn-secondary option-btn">
+            ENTER
+          </button>
         </div>
 
         <div class="option-group">

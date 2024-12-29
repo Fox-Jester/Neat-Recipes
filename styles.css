@@ -130,7 +130,8 @@ a .logo {
 .option-btn {
     font-size: 1rem;
     padding: 1rem 1.5rem;
-    margin: 3px;
+    margin-top: 0.5rem;
+    border-radius: 10px;
 
 }
 
@@ -169,11 +170,14 @@ a .logo {
     flex-grow: 1;
 }
 
-.option-input {
-    font-size: 1.4rem;
-    padding: 0.5rem 1rem;
-    flex-grow: 1;
+.time-input {
+    font-size: 1.6rem;
+    padding: 0.2rem 0.5rem;
+    width: 3.6rem;
+    box-shadow: 0 0 3px black;
+    border-radius: 5px;
 }
+
 
 ::placeholder {
     color: #cdcbd7;
@@ -193,16 +197,25 @@ a .logo {
     
 }
 
-.ingrediant-group {
+.input-group-optional {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem;
+}
+
+.instruction-group {
     align-items: center;
     display: flex;
    
     margin: 1.5rem 2rem;
 }
 
-.ingrediant-group p {
+.instruction-group p {
     font-size: 1.6rem;
-    
+}
+
+.instruction-group li {
+    font-size: 1.6rem;
     
 }
 
@@ -216,6 +229,7 @@ a .logo {
 .instruct-group {
     border-radius: 20px;
 }
+
 
 
 #search-btn {
@@ -280,12 +294,19 @@ a .logo {
     margin-top: 2rem;
     width: 12rem;
     background: linear-gradient(90deg, turquoise, rgb(111, 255, 241));
+    margin-bottom: 1rem;
 
 }
 
 .option-text {
     font-size: 1.8rem;
     padding: 1rem;
+}
+
+.time-text {
+    font-size: 1.4rem;
+    margin: 0 0.5rem;
+   
 }
 
 /* INPUT TEXT */
@@ -313,6 +334,15 @@ a .logo {
 }
 
 
+#instruction-list{
+    margin-top: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 3px grey;
+    max-width: 50%;
+
+   padding: 0 0.5rem;
+}
+
 /* TEXT-AREA */
 
 .text-area {
@@ -322,7 +352,7 @@ a .logo {
     padding: 1rem 1.5rem;
     outline: 0;
     border: 0;
-   
+    width: 30rem;
     flex-grow: 1;
     margin: 3px;
 
@@ -402,7 +432,7 @@ a .logo {
 }
 
 .card-name-block {
-    background: var(--btn-color-secondary);
+    background: var(--btn-color);
     border-radius: 10px;
   
     width: 20rem;
