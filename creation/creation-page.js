@@ -7,11 +7,10 @@ const App = {
        
         nameGroup: document.querySelector("#name-group"),
 
-        descriptionInput: document.querySelector("#description-input"),
-        descriptionBtn: document.querySelector("#description-btn"),
+        
+        descriptionGroup: document.querySelector("#description-group"),
 
-        ingrediantInput: document.querySelector("#ingrediant-input"),
-        ingrediantBtn: document.querySelector("#ingrediant-btn"),
+     
         ingrediantList: document.querySelector("#ingrediant-list"),
 
         instructionArea: document.querySelector("#instruction-area"),
@@ -30,12 +29,14 @@ const App = {
     },
 
     init(){
-            this.reapplyName()
+            this.applyName()
+            this.applyDescription()
+            this.applyIngrediants()
 
         },
     
 
-    reapplyName() {
+    applyName() {
         const nameInput = document.querySelector("#name-input")
         const nameBtn = document.querySelector("#name-btn")
         nameBtn.addEventListener("click", (e) => {
@@ -57,7 +58,70 @@ const App = {
             }
         })
 
+    },
+
+
+    applyDescription() {
+        const descriptionInput = document.querySelector("#description-input");
+        const descriptionBtn = document.querySelector("#description-btn");
+        descriptionBtn.addEventListener("click", (e) => {
+            if (descriptionInput.value !== null){
+                descriptionBtn.remove();
+                descriptionInput.remove();
+                
+                App.$.descriptionGroup.innerHTML = `<p class="input-text">${descriptionInput.value}</p> <button id="description-redo-btn" 
+                class="btn btn-primary redo-btn"><i class="fa-solid fa-rotate-right"></i></button>`
+
+                const redoBtn = document.querySelector("#description-redo-btn");
+
+                redoBtn.addEventListener("click", (e) => {
+                    App.$.descriptionGroup.innerHTML = `<input type="text" id="description-input" class="input add-input"
+                            placeholder="Quick description"/> <button id="description-btn" class="btn btn-primary add-btn">ENTER</button>`
+                    this.reapplyDescription();
+
+                })
+
+            }
+        })
+
+    },
+
+
+    applyIngrediants() {
+        const ingrediantInput = document.querySelector("#ingrediant-input");
+        const ingredantBtn =  document.querySelector("#ingrediant-btn");
+        ingredantBtn.addEventListener("click", (e) => {
+            if (ingrediantInput !== null){
+                const wrapper = document.createElement("div")
+                wrapper.classList.add("ingrediant-group");
+                wrapper.innerHTML = `<p class="imput-text">${ingrediantInput.value}</p> <button class="btn  
+                x-btn" ><i class="fa-solid fa-x"></i></i></button>`
+
+                this.$.ingrediantList.appendChild(wrapper);
+                ingrediantInput.value = "";
+                    let xBtn = document.querySelectorAll(".x-btn")
+                    xBtn.forEach((btn) => 
+                        btn.removeEventListener("click", this.delete));
+                    xBtn.forEach((btn) => 
+                        btn.addEventListener("click", this.delete));
+          
+
+                
+            }
+        })
+    },
+
+    delete() {
+        try {
+            this.parentElement.remove()
+        }
+        catch(err){
+            
+        }
     }
+   
+
+
 
 }
 

@@ -107,9 +107,24 @@ a .logo {
 
 .redo-btn {
     font-size: 1.6rem;
-    padding: 0.8rem 1rem;
+    padding: 1rem 1rem;
     border-radius: 50%;
     margin: 4px;
+    height: 4rem;
+}
+
+.x-btn {
+    font-size: 1rem;
+    padding-left: 0.5rem;
+    border-radius: 50%;
+    margin: 2px;
+    
+    background-color: transparent;
+    box-shadow: 0 0 0;
+}
+
+.x-btn:hover {
+    color: orange;
 }
 
 .option-btn {
@@ -170,6 +185,25 @@ a .logo {
     box-shadow: 0 0 3px black;
     display: flex;
     flex-grow: 1;
+    align-items: center;
+}
+
+.input-group p { 
+    max-width: 40rem;
+    
+}
+
+.ingrediant-group {
+    align-items: center;
+    display: flex;
+   
+    margin: 1.5rem 2rem;
+}
+
+.ingrediant-group p {
+    font-size: 1.6rem;
+    
+    
 }
 
 .option-group {
@@ -266,11 +300,14 @@ a .logo {
 /* INGREDIANT LIST */
 
 #ingrediant-list{
+    
     border-radius: 20px;
     box-shadow: 0 0 3px black;
-    height: 20rem;
-    width: 50%;
+    justify-content: center;
+    max-height: 28rem;
+    overflow-y: auto;
     display: grid;
+    grid-template-columns: repeat(4, auto);
     
     margin-top: 2rem;
 }
