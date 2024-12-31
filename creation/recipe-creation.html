@@ -85,18 +85,18 @@
           </div>
           <div class="input-group-optional">
             <input
-              id="prep-input"
+              id="prep-input-hour"
               type="text"
-              maxlength="2"
               class="input time-input"
+              maxlength="2"
               placeholder="00"
             />
             <p class="time-text">:</p>
             <input
-              id="prep-input"
+              id="prep-input-mins"
               type="text"
-              maxlength="2"
               class="input time-input"
+              maxlength="2"
               placeholder="00"
             />
           </div>
@@ -115,22 +115,22 @@
           </div>
           <div class="input-group-optional">
             <input
-              id="prep-input"
-              type="text"
+              id="cook-input-hour"
+              type="number"
               maxlength="2"
               class="input time-input"
               placeholder="00"
             />
             <p class="time-text">:</p>
             <input
-              id="prep-input"
-              type="text"
+              id="cook-input-mins"
+              type="number"
               maxlength="2"
               class="input time-input"
               placeholder="00"
             />
           </div>
-          <button id="prep-btn" class="btn btn-secondary option-btn">
+          <button id="cook-btn" class="btn btn-secondary option-btn">
             ENTER
           </button>
         </div>
@@ -169,18 +169,15 @@
         </div>
       </div>
 
-      <div id="img-preview" class="card">
+      <div class="card">
         <div class="card-name-block">
-          <h4 class="card-name">NAME</h4>
+          <h4 id="card-name" class="card-name"></h4>
         </div>
-        <img src="/food-wallpaper.png" alt="" />
-        <ul class="card-list">
-          <li>prep time: 10mins</li>
-          <li>cook time: 20mins</li>
-          <li>servings: 4</li>
-        </ul>
+        <img id="img-preview" src="/food-wallpaper.png" alt="" />
       </div>
-      <button id="finish-recipe-btn" class="btn-secondary">CREATE</button>
+      <a href="/index.html">
+        <button id="finish-btn" class="btn-secondary">CREATE</button>
+      </a>
     </div>
     <script src="creation-page.js"></script>
   </body>

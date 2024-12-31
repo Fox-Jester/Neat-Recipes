@@ -24,6 +24,18 @@ html {
 }
 
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 
 /* HEADER-BOX */
 
@@ -142,7 +154,7 @@ a .logo {
     margin: 6px;
 }
 
-#finish-recipe-btn {
+#finish-btn {
     font-size: 3.2rem;
     margin-top: 8rem;
     margin-bottom: 12rem;
@@ -412,7 +424,7 @@ a .logo {
 
 
 
-#img-preview img{
+#img-preview{
     width: 20rem;
     height: 20rem;
 }

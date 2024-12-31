@@ -3,20 +3,18 @@
 ___JS___
 
 
+prep time hours
+prep time mins
+
+cook time hours
+cook time mins
+
+servings
+
+image
 
 
-__STEP.1__ PAGE2
-Make it so creating a...
 
-!name
-!description
-!ingrediants
-!Instructions
-!optional
-
-saves.
-
-make the create-recipe btn work.
 
 
 
@@ -33,3 +31,16 @@ make star filter work
 __STEP3__ PAGE3
 
 Create 3rd page.
+
+
+
+
+
+
+
+1 WAY:
+
+Counter
+
+
+2 WAY:
