@@ -36,6 +36,8 @@ const App = {
         
 
         finishBtn: document.querySelector("#finish-btn"),
+
+        counter: 0
     },
 
     init(){
@@ -48,7 +50,16 @@ const App = {
             this.applyServings()
             this.imgChange()
             this.createRecipe()
+            this.counterUpdater()
         },
+
+    counterUpdater(){
+        if(localStorage.getItem("counterData")){
+            this.$.counter = localStorage.getItem("counterData");
+        }
+    },
+
+  
     
     info: {
         nameData: "",
@@ -61,20 +72,22 @@ const App = {
         cookDataMins: "",
         servingData: "",
         imgData: "",
-
+        
     },
-
+    
     infoSet(){
-        localStorage.setItem("nameData", this.info.nameData);
-        localStorage.setItem("descriptionData", this.info.descriptionData);
-        localStorage.setItem("ingrediantData", this.info.ingrediantData);
-        localStorage.setItem("instructionData", this.info.instructionData);
-        localStorage.setItem("prepDataHour", this.info.prepDataHour);
-        localStorage.setItem("prepDataMins", this.info.prepDataMins);
-        localStorage.setItem("cookDataHour", this.info.cookDataHour);
-        localStorage.setItem("cookDataMins", this.info.cookDataMins);
-        localStorage.setItem("servingData", this.info.servingData);
-        localStorage.setItem("imgData", this.info.imgData);
+        localStorage.setItem(`nameData${this.$.counter}`, this.info.nameData);
+        localStorage.setItem(`descriptionData${this.$.counter}`, this.info.descriptionData);
+        localStorage.setItem(`ingrediantData${this.$.counter}`, this.info.ingrediantData);
+        localStorage.setItem(`instructionData${this.$.counter}`, this.info.instructionData);
+        localStorage.setItem(`prepDataHour${this.$.counter}`, this.info.prepDataHour);
+        localStorage.setItem(`prepDataMins${this.$.counter}`, this.info.prepDataMins);
+        localStorage.setItem(`cookDataHour${this.$.counter}`, this.info.cookDataHour);
+        localStorage.setItem(`cookDataMins${this.$.counter}`, this.info.cookDataMins);
+        localStorage.setItem(`servingData${this.$.counter}`, this.info.servingData);
+        localStorage.setItem(`imgData${this.$.counter}`, this.info.imgData);
+        localStorage.setItem("counterData", this.$.counter);
+        this.$.counter++
     },
 
     applyName() {

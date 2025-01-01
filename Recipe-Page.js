@@ -11,16 +11,15 @@ const App = {
     init() {
         this.loadPage()
         console.log(localStorage.getItem("createRecipe"));
+        
         this.recipeCheck()
-       
-
+        this.applyListeners()
     },
 
     recipeCheck() {
         if(localStorage.getItem("createRecipe")) {
             const newRecipe = new Recipe();
             newRecipe.create();
-            newRecipe.applyListeners();
             this.savePage();
             localStorage.setItem("createRecipe", null);
             
@@ -28,6 +27,43 @@ const App = {
             
     },
 
+    applyListeners() {
+            const deleteBtns = document.querySelectorAll(".delete-btn");
+
+            deleteBtns.forEach((btn) => 
+                btn.removeEventListener("click", this.deleteCard));
+            deleteBtns.forEach((btn) => 
+                btn.addEventListener("click", this.deleteCard));
+            
+            const starBtns = document.querySelectorAll(".star-btn")
+            starBtns.forEach((btn) =>
+                btn.removeEventListener("click", this.starToggle));
+
+            starBtns.forEach((btn) =>
+                btn.addEventListener("click", this.starToggle));
+    
+           const cards = document.querySelectorAll(".card");
+
+           cards.forEach((card) =>
+            card.removeEventListener("click", this.cardClicked));
+           cards.forEach((card) =>
+            card.addEventListener("click", this.cardClicked));
+           
+    },
+
+    cardClicked(){ 
+        alert("card clicked")
+    },
+
+    deleteCard() {
+        try {
+            const parent = this.parentElement;
+            parent.parentElement.remove()
+        }
+        catch(err){
+            
+        }
+    },
     
     
     savePage() {
@@ -35,29 +71,29 @@ const App = {
     },
     
     loadPage() {
-        
         this.$.recipeBox.innerHTML = localStorage.getItem("PageData");
-    }
+    },
+
 }
 
 
 
 function Recipe() {
     
-    
-        this.name = localStorage.getItem("nameData");
-        this.prepDataHour = localStorage.getItem("prepDataHour");
-        this.prepDataMins = localStorage.getItem("prepDataMins");
-        this.cookDataHour = localStorage.getItem("cookDataHour");
-        this.cookDataMins = localStorage.getItem("cookDataMins");
-        this.servingData = localStorage.getItem("servingData");
-        this.imgData = localStorage.getItem("imgData");
+        this.counter = localStorage.getItem("counterData")
+
+        this.name = localStorage.getItem(`nameData${this.counter}`);
+        this.prepDataHour = localStorage.getItem(`prepDataHour${this.counter}`);
+        this.prepDataMins = localStorage.getItem(`prepDataMins${this.counter}`);
+        this.cookDataHour = localStorage.getItem(`cookDataHour${this.counter}`);
+        this.cookDataMins = localStorage.getItem(`cookDataMins${this.counter}`);
+        this.servingData = localStorage.getItem(`servingData${this.counter}`);
+        this.imgData = localStorage.getItem(`imgData${this.counter}`);
         
-        this.ingrediants = localStorage.getItem("ingrediantData");
-        this.instructions = localStorage.getItem("instructionData");
-        this.description = localStorage.getItem("descriptionData");
+
         
         this.card = document.createElement("div");
+        this.card.id = `card${this.counter}`
         this.cardBottom = document.createElement('div')
         this.starBtn = document.createElement("i")
         this.xBtn = document.createElement("i")
@@ -140,23 +176,11 @@ function Recipe() {
             `
             this.card.appendChild(this.cardBottom);
             App.$.recipeBox.appendChild(this.card)
-        }
-        this.applyListeners = function() {
-            this.xBtn.addEventListener("click", (e) => {
-                this.card.remove();
-                App.savePage()
-                this.Recipe = null;
-            })
-            this.card.addEventListener("click", (e) => {
-                alert("Card Clicked!");
-            })
-            this.starBtn.addEventListener("click", (e) => {
-                this.card.classList.toggle("stared")
-            })
-
-            
-        }
     }
 
-    App.init()
+
+    }
+
     
+    App.init()
+
