@@ -47,6 +47,7 @@ input[type=number] {
     padding: 1rem;
     align-items: center;
     margin: 5rem 15rem;
+    margin-bottom: 4rem;
 }
 
 
@@ -137,6 +138,18 @@ a .logo {
 
 .x-btn:hover {
     color: orange;
+}
+
+
+.delete-btn:hover {
+    color: turquoise;
+}
+
+.star-btn {
+    color: orange;
+}
+.star-btn:hover{
+    color: turquoise;
 }
 
 .option-btn {
@@ -345,6 +358,16 @@ a .logo {
     margin-top: 2rem;
 }
 
+#recipe-box {
+    border-radius: 10px;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    max-height: 80vh;
+    overflow-y: auto;
+    
+}
+
 
 #instruction-list{
     margin-top: 2rem;
@@ -432,8 +455,10 @@ a .logo {
 .card {
     background: antiquewhite;
     width: 22rem;
-    height: 34rem;
+    
+    
     box-shadow: 0 0 5px black;
+    margin: 2rem 3rem;
     
     padding: 1rem;
     border-radius: 10px;
@@ -466,6 +491,25 @@ a .logo {
 
 .card-list {
     margin-top: 1rem;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: darkblue;
+    height: 5.5rem;
+}
+
+.card-list li {
+    margin: 0.3rem 0;
+}
+
+.card-bottom {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    
+
+}
+
+.card-bottom i {
+    font-size: 2rem;
+    margin: 0.5rem 0 0 1rem;
+    justify-self: end;
 }

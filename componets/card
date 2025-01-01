@@ -1,11 +1,15 @@
-<div id="img-preview" class="card">
+<div class="card">
   <div class="card-name-block">
     <h4 class="card-name">NAME</h4>
   </div>
-  <img src="/food-wallpaper.png" alt="" />
+  <img id="img-preview" src="/food-wallpaper.png" alt="" />
   <ul class="card-list">
     <li>prep time: 5hours & 10mins</li>
     <li>cook time: 20mins</li>
     <li>servings: 4</li>
   </ul>
+  <div class="card-bottom">
+    <i class="fa-regular fa-star star-btn" style="color: #fea916"></i>
+    <i class="fa-solid fa-x delete-btn"></i>
+  </div>
 </div>

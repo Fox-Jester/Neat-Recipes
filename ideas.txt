@@ -3,16 +3,12 @@
 ___JS___
 
 
-prep time hours
-prep time mins
+create btn only work when
 
-cook time hours
-cook time mins
-
-servings
-
-image
-
+star class togglable on card
+filter btn saves the container
+delete all cards except for star toggled
+and then reload all the cards after.
 
 
 

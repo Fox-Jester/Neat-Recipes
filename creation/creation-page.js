@@ -47,6 +47,7 @@ const App = {
             this.applyCookTime()
             this.applyServings()
             this.imgChange()
+            this.createRecipe()
         },
     
     info: {
@@ -63,6 +64,18 @@ const App = {
 
     },
 
+    infoSet(){
+        localStorage.setItem("nameData", this.info.nameData);
+        localStorage.setItem("descriptionData", this.info.descriptionData);
+        localStorage.setItem("ingrediantData", this.info.ingrediantData);
+        localStorage.setItem("instructionData", this.info.instructionData);
+        localStorage.setItem("prepDataHour", this.info.prepDataHour);
+        localStorage.setItem("prepDataMins", this.info.prepDataMins);
+        localStorage.setItem("cookDataHour", this.info.cookDataHour);
+        localStorage.setItem("cookDataMins", this.info.cookDataMins);
+        localStorage.setItem("servingData", this.info.servingData);
+        localStorage.setItem("imgData", this.info.imgData);
+    },
 
     applyName() {
         const nameInput = document.querySelector("#name-input")
@@ -165,8 +178,12 @@ const App = {
     validator(value){
         const regex = /\S/;
         
-        return regex.test(value);
-        
+        return regex.test(value)
+    },
+    
+    numValidator(num) {
+        const regex = /^[1-9][0-9]*$/;
+        return regex.test(num);
     },
 
     delete() {
@@ -180,10 +197,10 @@ const App = {
 
     applyPrepTime() {
         this.$.prepBtn.addEventListener("click", (e) => {
-            if (this.validator(this.$.prepInputHour.value)){
+            if (this.numValidator(this.$.prepInputHour.value)){
                 this.info.prepDataHour = this.$.prepInputHour.value;
             }
-            if (this.validator(this.$.prepInputMins.value)){
+            if (this.numValidator(this.$.prepInputMins.value)){
                 this.info.prepDataMins = this.$.prepInputMins.value;
             }
 
@@ -192,10 +209,10 @@ const App = {
 
     applyCookTime() {
         this.$.cookBtn.addEventListener("click", (e) => {
-            if(this.validator(this.$.cookInputHour.value)){
+            if(this.numValidator(this.$.cookInputHour.value)){
                 this.info.cookDataHour = this.$.cookInputHour.value;
             }
-            if(this.validator(this.$.cookInputMins.value)){
+            if(this.numValidator(this.$.cookInputMins.value)){
                 this.info.cookDataMins = this.$.cookInputMins.value;
             }
         })
@@ -203,8 +220,8 @@ const App = {
 
     applyServings() {
         this.$.servingBtn.addEventListener("click", (e) => {
-            if(this.validator(this.$.servingInput.value)){
-                this.info.servingData = this.$.servingInput;
+            if(this.numValidator(this.$.servingInput.value)){
+                this.info.servingData = this.$.servingInput.value;
             }
         })
     },
@@ -220,11 +237,28 @@ const App = {
             this.info.ingrediantData = this.$.ingrediantList.innerHTML;
             this.info.instructionData = this.$.instructionList.innerHTML;
             this.info.imgData = this.$.imagePreview.src;
+            if(!this.info.nameData) {
+                alert("Enter a name!");
+                return;
+            }
+            if(!this.info.ingrediantData) {
+                alert("Enter the ingrediants!");
+                return;
+            }
+            if(!this.info.instructionData){
+                alert("Enter the instructions!");
+                return;
+            }
+            else {
+                window.location.href = "/index.html";
+                this.infoSet();
+                localStorage.setItem("createRecipe", true);
+            }
             
         })
 
     }
 
 }
-
+localStorage.setItem("createRecipe", true);
 App.init()
