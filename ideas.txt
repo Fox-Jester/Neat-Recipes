@@ -10,15 +10,8 @@ ___JS___
 __STEP.2__ PAGE1
 
 
-make star filter work
-
-click star will star the card.
-star-filter btn will hide all cards not stared.
-
- 
-
-
-
+fix counter number
+not incrementing.
 
 
 
@@ -37,10 +30,6 @@ Create 3rd page.
 
 
 
+ideas:
 
-1 WAY:
-
-Counter
-
-
-2 WAY:
+btn animation

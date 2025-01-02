@@ -58,7 +58,12 @@ const App = {
                 const cards = document.querySelectorAll(".card");
                 
                 cards.forEach((card) =>
-                    card.addEventListener("click", this.cardClicked));
+                    card.addEventListener("click", (e) =>{
+                        console.log(card.id);
+                        const idNum = this.extract(card.id)
+                        localStorage.setItem("idData", idNum)
+                        window.location.href = "/view/view.html";
+                    }));
                 
 
 
@@ -99,6 +104,11 @@ const App = {
            
     },
 
+    extract(string) {
+        const parts = string.split('')
+        const lastPart = parts.filter((parts) => Number(parts) || parts === "0");
+        return lastPart.join('')
+    },
 
 
     applyStarListener(){
@@ -195,6 +205,7 @@ function Recipe() {
 
         this.name = localStorage.getItem(`nameData${this.counter}`);
         this.prepDataHour = localStorage.getItem(`prepDataHour${this.counter}`);
+        console.log(`prepDataHour${this.counter}`)
         this.prepDataMins = localStorage.getItem(`prepDataMins${this.counter}`);
         this.cookDataHour = localStorage.getItem(`cookDataHour${this.counter}`);
         this.cookDataMins = localStorage.getItem(`cookDataMins${this.counter}`);

@@ -33,6 +33,10 @@ const App = {
 
         imgInput: document.querySelector("#img-input"),
         imagePreview: document.querySelector("#img-preview"),
+
+        prepList: document.querySelector("#prep-li"),
+        cookList: document.querySelector("#cook-li"),
+        servingsList: document.querySelector("#serving-li"),
         
 
         finishBtn: document.querySelector("#finish-btn"),
@@ -56,6 +60,7 @@ const App = {
     counterUpdater(){
         if(localStorage.getItem("counterData")){
             this.$.counter = localStorage.getItem("counterData");
+            console.log(localStorage.getItem("counterData"))
         }
     },
 
@@ -76,6 +81,7 @@ const App = {
     },
     
     infoSet(){
+        this.$.counter++
         localStorage.setItem(`nameData${this.$.counter}`, this.info.nameData);
         localStorage.setItem(`descriptionData${this.$.counter}`, this.info.descriptionData);
         localStorage.setItem(`ingrediantData${this.$.counter}`, this.info.ingrediantData);
@@ -87,7 +93,6 @@ const App = {
         localStorage.setItem(`servingData${this.$.counter}`, this.info.servingData);
         localStorage.setItem(`imgData${this.$.counter}`, this.info.imgData);
         localStorage.setItem("counterData", this.$.counter);
-        this.$.counter++
     },
 
     applyName() {
@@ -208,35 +213,93 @@ const App = {
     },
 
     applyPrepTime() {
+        const prepLi = App.$.prepList
         this.$.prepBtn.addEventListener("click", (e) => {
-            if (this.numValidator(this.$.prepInputHour.value)){
+            if((App.numValidator(this.$.prepInputHour.value)) && (App.numValidator(this.$.prepInputMins.value))){
                 this.info.prepDataHour = this.$.prepInputHour.value;
-            }
-            if (this.numValidator(this.$.prepInputMins.value)){
                 this.info.prepDataMins = this.$.prepInputMins.value;
-            }
 
+                prepLi.innerHTML = `Prep time: ${this.$.prepInputHour.value} hours & ${this.$.prepInputMins.value} mins`
+                this.reveal(prepLi);
+            }
+            else if(this.numValidator(this.$.prepInputHour.value)){
+                this.info.prepDataHour = this.$.prepInputHour.value;
+
+                prepLi.innerHTML = `Prep time: ${this.$.prepInputHour.value} hours`
+                this.reveal(prepLi);
+            }
+            else if(this.numValidator(this.$.prepInputMins.value)){
+                this.info.prepDataMins = this.$.prepInputMins.value;
+
+                prepLi.innerHTML = `Prep time: ${this.$.prepInputMins.value} mins`
+                this.reveal(prepLi);
+            }
+            else{
+                prepLi.classList.add("hide")
+            }
+            
+          
         })
     },
-
     applyCookTime() {
+
+        const cookLi = App.$.cookList
         this.$.cookBtn.addEventListener("click", (e) => {
-            if(this.numValidator(this.$.cookInputHour.value)){
+            if((App.numValidator(this.$.cookInputHour.value)) && (App.numValidator(this.$.cookInputMins.value))){
                 this.info.cookDataHour = this.$.cookInputHour.value;
-            }
-            if(this.numValidator(this.$.cookInputMins.value)){
                 this.info.cookDataMins = this.$.cookInputMins.value;
+
+                cookLi.innerHTML = `Cook time ${this.$.cookInputHour.value} hours & ${this.$.cookInputMins.value} mins`
+                this.reveal(cookLi);
             }
+            else if(this.numValidator(this.$.cookInputHour.value)){
+                this.info.cookDataHour = this.$.cookInputHour.value;
+
+                cookLi.innerHTML = `Cook time ${this.$.cookInputHour.value} hours`
+                this.reveal(cookLi);
+            }
+            else if(this.numValidator(this.$.cookInputMins.value)){
+                this.info.cookDataMins = this.$.cookInputMins.value;
+
+                cookLi.innerHTML = `Cook time ${this.$.cookInputMins.value} mins`
+                this.reveal(cookLi);
+            }
+            else{
+                this.hide(cookLi)
+            }
+            
+          
         })
     },
-
+    
     applyServings() {
+        const servingLi = App.$.servingsList
         this.$.servingBtn.addEventListener("click", (e) => {
             if(this.numValidator(this.$.servingInput.value)){
                 this.info.servingData = this.$.servingInput.value;
+
+                servingLi.innerHTML = `Servings: ${this.$.servingInput.value}`
+                this.reveal(servingLi);
+            }
+            else{
+                this.hide(servingLi)
             }
         })
     },
+
+    reveal(target){
+        if(target.classList.contains("hide")){
+            target.classList.remove("hide")
+        }
+
+    },
+
+    hide(target){
+        if(!target.classList.contains("hide")){
+            target.classList.add("hide")
+        }
+    },
+
     
     imgChange() {
         this.$.imgInput.onchange = () => {
@@ -272,5 +335,5 @@ const App = {
     }
 
 }
-localStorage.setItem("createRecipe", true);
+
 App.init()
