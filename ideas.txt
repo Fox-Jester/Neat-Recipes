@@ -9,27 +9,11 @@ ___JS___
 
 __STEP.2__ PAGE1
 
-search bar:
 
-make an array of all the innerHTML of
-card names, and use the search bar/btn 
-in conjuction with regex to sort them.
-
-
-
-
-
-
-
-
-
-
-
-
-make search bar work
 make star filter work
 
-
+click star will star the card.
+star-filter btn will hide all cards not stared.
 
  
 

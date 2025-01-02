@@ -174,7 +174,7 @@ const App = {
                 const wrapper = document.createElement("div")
                 wrapper.classList.add("instruction-group");
                 wrapper.innerHTML = `<li class="imput-text">${this.$.instructionArea.value}</li> <button class="btn  
-                x-btn" ><i class="fa-solid fa-x"></i></i></button>`
+                x-btn" ><i class="fa-solid fa-x"></i></button>`
 
                 this.$.instructionList.appendChild(wrapper);
                 this.$.instructionArea.value = "";
@@ -190,7 +190,6 @@ const App = {
 
     validator(value){
         const regex = /\S/;
-        
         return regex.test(value)
     },
     

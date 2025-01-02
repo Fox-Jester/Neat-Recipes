@@ -6,7 +6,8 @@ const App = {
         recipeBox: document.querySelector("#recipe-box"),
         searchBar: document.querySelector("#search-bar"),
         searchBtn: document.querySelector("#search-btn"),
-        
+        searchGroup: document.querySelector("#search-group"),
+        starFilter: document.querySelector("#star-filter"),
         
         
         
@@ -16,7 +17,7 @@ const App = {
         this.loadPage()
         this.recipeCheck()
 
-        this.nameGrab()
+
         this.applyListeners()
     },
 
@@ -38,64 +39,141 @@ const App = {
     applyListeners() {
         const deleteBtns = document.querySelectorAll(".delete-btn");
         
-        deleteBtns.forEach((btn) => 
-            btn.removeEventListener("click", (e) => {
-                if(confirm("are you sure you want to delete?")){
-                    const parent = btn.parentElement;
-                    parent.parentElement.remove();
-                    App.$.savePage();
-                }
-                
-                
-            }));
+      
             deleteBtns.forEach((btn) => 
                 btn.addEventListener("click", (e) => {
                     if(confirm("are you sure you want to delete?")){
                         const parent = btn.parentElement;
                         parent.parentElement.remove();
-                        App.$.savePage();
+                        App.savePage();
                     }
                 }));
                 
                 
                 
-                const starBtns = document.querySelectorAll(".star-btn")
-                starBtns.forEach((btn) =>
-                    btn.removeEventListener("click", this.starToggle));
-                
-                starBtns.forEach((btn) =>
-                    btn.addEventListener("click", this.starToggle));
-                
-                
+                this.applyStarListener()   
+                this.applyStaredListener()   
+            
+
                 const cards = document.querySelectorAll(".card");
-                cards.forEach((card) =>
-                    card.removeEventListener("click", this.cardClicked));
+                
                 cards.forEach((card) =>
                     card.addEventListener("click", this.cardClicked));
                 
+
+
+                this.$.starFilter.addEventListener("click", (e) => {
+                    this.$.starFilter.classList.toggle("fa-regular")
+                    this.$.starFilter.classList.toggle("fa-solid")
+
+                    const cards = document.querySelectorAll(".card");
+                        cards.forEach(card => {
+                    
+                        if(!card.classList.contains("stared")){
+                            card.classList.toggle("hide");
+                        }
+                        });
+                 
+            });
                 
-                const cardNames = document.querySelectorAll(".card-name")
                 
 
+                this.$.searchBar.addEventListener("keydown", (e) => {
+                    if (e.key === "Enter"){
+                        App.searchInput();
+                    }
+                })
+
                 this.$.searchBtn.addEventListener("click", (e) => {
-                    const value = App.$.searchBar.value;
-                    console.log(cardNames);
-                    cardNames.forEach(name => {
-                        console.log(name);
-                        const isVisible = name.innerHTML.includes(value)
-                        name.parentElement.parentElement.classList.toggle("hide", !isVisible)
-                    })
-                    
-           })
+                    App.searchInput();
+                              
+                })
+
+                this.$.searchBar.addEventListener("input", (e) => {
+                    const value = e.target.value
+                    if((value === "") && (document.querySelector(".refresh-btn"))){
+                        const refreshBtn = document.querySelector(".refresh-btn");
+                        refreshBtn.remove()
+                    }
+                })
            
+    },
+
+
+
+    applyStarListener(){
+        const starBtns = document.querySelectorAll(".star-btn")
+        
+        starBtns.forEach((btn) =>
+            btn.removeEventListener("click", (e) => {
+             }));
+
+        starBtns.forEach((btn) =>
+            btn.addEventListener("click", (e) => {
+                btn.parentElement.parentElement.classList.toggle("stared")
+                btn.outerHTML = '<i class="fa-solid fa-star stared-btn"></i>'
+                App.applyStaredListener()
+                App.savePage()
+             }));
+    },
+
+    applyStaredListener(){
+        const staredBtns = document.querySelectorAll(".stared-btn")
+        
+        staredBtns.forEach((btn) =>
+            btn.removeEventListener("click", (e) => {
+             }));
+
+
+
+        staredBtns.forEach((btn) =>
+            btn.addEventListener("click", (e) => {
+                btn.parentElement.parentElement.classList.toggle("stared")
+                btn.outerHTML = '<i class="fa-regular fa-star star-btn"></i>'
+                App.applyStarListener()
+                App.savePage()
+             }));
+    },
+
+  
+
+    searchInput(){
+                const cardNames = document.querySelectorAll(".card-name")
+                const value = App.whiteSpaceRemove(App.$.searchBar.value);
+                const regex = /\S/;
+
+                if((regex.test(value)) && (App.$.searchGroup.childElementCount < 3)) {
+                  
+                        const refreshBtn = document.createElement("i")
+                        refreshBtn.classList.add("fa-solid", "fa-x", "refresh-btn")
+                        App.$.searchBar.after(refreshBtn);
+    
+                        refreshBtn.addEventListener("click", (e) => {
+                            App.$.searchBar.value = ""
+                            refreshBtn.remove();
+                            App.$.searchBar.focus();
+                            App.searchInput()
+                        })
+                    
+                }
+              
+              
+               
+
+                cardNames.forEach(name => {
+                    const isVisible =  App.whiteSpaceRemove(name.innerHTML).includes(value)
+                    name.parentElement.parentElement.classList.toggle("hide", !isVisible)
+        })
     },
 
     cardClicked(){ 
         console.log("card clicked")
     },
 
- 
-    
+    whiteSpaceRemove(value) {
+        return value.replace(/\s/g, "");
+
+    },
     
     savePage(){
 

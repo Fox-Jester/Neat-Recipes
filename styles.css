@@ -140,16 +140,42 @@ a .logo {
     color: orange;
 }
 
+.delete-btn{
+    color: darkgray;
+}
 
 .delete-btn:hover {
-    color: turquoise;
+    color: rgb(35, 34, 34);
 }
 
 .star-btn {
-    color: orange;
+    color: rgb(254, 181, 45);
 }
 .star-btn:hover{
-    color: turquoise;
+    color: orange
+}
+
+.stared-btn{
+    color: rgb(254, 181, 45);
+}
+
+.stared-btn:hover{
+    color: orange;
+}
+
+#star-filter {
+    color:rgb(254, 181, 45);
+}
+
+#star-filter:hover{
+    color: orange;
+}
+
+.refresh-btn{
+    font-size: 2rem;
+    margin-right: 2rem;
+    color: grey;
+    font-weight: 600;
 }
 
 .option-btn {
