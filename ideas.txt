@@ -3,20 +3,27 @@
 ___JS___
 
 
-create btn only work when
-
-star class togglable on card
-filter btn saves the container
-delete all cards except for star toggled
-and then reload all the cards after.
-
-
 
 
 
 
 __STEP.2__ PAGE1
-save date posted.
+
+search bar:
+
+make an array of all the innerHTML of
+card names, and use the search bar/btn 
+in conjuction with regex to sort them.
+
+
+
+
+
+
+
+
+
+
 
 
 make search bar work

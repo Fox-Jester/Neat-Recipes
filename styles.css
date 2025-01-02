@@ -513,3 +513,7 @@ a .logo {
     margin: 0.5rem 0 0 1rem;
     justify-self: end;
 }
+
+.hide {
+    display: none;
+}

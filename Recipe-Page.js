@@ -1,23 +1,28 @@
 
 
 const App = {
-
+    
     $: {
         recipeBox: document.querySelector("#recipe-box"),
+        searchBar: document.querySelector("#search-bar"),
+        searchBtn: document.querySelector("#search-btn"),
+        
+        
         
         
     },
 
     init() {
         this.loadPage()
-        console.log(localStorage.getItem("createRecipe"));
-        
         this.recipeCheck()
+
+        this.nameGrab()
         this.applyListeners()
     },
 
     recipeCheck() {
-        if(localStorage.getItem("createRecipe")) {
+        if(localStorage.getItem("createRecipe") === "true" ) {
+            console.log(localStorage.getItem("createRecipe"))
             const newRecipe = new Recipe();
             newRecipe.create();
             this.savePage();
@@ -27,51 +32,79 @@ const App = {
             
     },
 
-    applyListeners() {
-            const deleteBtns = document.querySelectorAll(".delete-btn");
-
-            deleteBtns.forEach((btn) => 
-                btn.removeEventListener("click", this.deleteCard));
-            deleteBtns.forEach((btn) => 
-                btn.addEventListener("click", this.deleteCard));
-            
-            const starBtns = document.querySelectorAll(".star-btn")
-            starBtns.forEach((btn) =>
-                btn.removeEventListener("click", this.starToggle));
-
-            starBtns.forEach((btn) =>
-                btn.addEventListener("click", this.starToggle));
+    nameGrab() {
+    },
     
-           const cards = document.querySelectorAll(".card");
+    applyListeners() {
+        const deleteBtns = document.querySelectorAll(".delete-btn");
+        
+        deleteBtns.forEach((btn) => 
+            btn.removeEventListener("click", (e) => {
+                if(confirm("are you sure you want to delete?")){
+                    const parent = btn.parentElement;
+                    parent.parentElement.remove();
+                    App.$.savePage();
+                }
+                
+                
+            }));
+            deleteBtns.forEach((btn) => 
+                btn.addEventListener("click", (e) => {
+                    if(confirm("are you sure you want to delete?")){
+                        const parent = btn.parentElement;
+                        parent.parentElement.remove();
+                        App.$.savePage();
+                    }
+                }));
+                
+                
+                
+                const starBtns = document.querySelectorAll(".star-btn")
+                starBtns.forEach((btn) =>
+                    btn.removeEventListener("click", this.starToggle));
+                
+                starBtns.forEach((btn) =>
+                    btn.addEventListener("click", this.starToggle));
+                
+                
+                const cards = document.querySelectorAll(".card");
+                cards.forEach((card) =>
+                    card.removeEventListener("click", this.cardClicked));
+                cards.forEach((card) =>
+                    card.addEventListener("click", this.cardClicked));
+                
+                
+                const cardNames = document.querySelectorAll(".card-name")
+                
 
-           cards.forEach((card) =>
-            card.removeEventListener("click", this.cardClicked));
-           cards.forEach((card) =>
-            card.addEventListener("click", this.cardClicked));
+                this.$.searchBtn.addEventListener("click", (e) => {
+                    const value = App.$.searchBar.value;
+                    console.log(cardNames);
+                    cardNames.forEach(name => {
+                        console.log(name);
+                        const isVisible = name.innerHTML.includes(value)
+                        name.parentElement.parentElement.classList.toggle("hide", !isVisible)
+                    })
+                    
+           })
            
     },
 
     cardClicked(){ 
-        alert("card clicked")
+        console.log("card clicked")
     },
 
-    deleteCard() {
-        try {
-            const parent = this.parentElement;
-            parent.parentElement.remove()
-        }
-        catch(err){
-            
-        }
-    },
+ 
     
     
-    savePage() {
-        localStorage.setItem("PageData", this.$.recipeBox.innerHTML);
+    savePage(){
+
+        localStorage.setItem("pageData", App.$.recipeBox.innerHTML)
+
     },
     
     loadPage() {
-        this.$.recipeBox.innerHTML = localStorage.getItem("PageData");
+        this.$.recipeBox.innerHTML = localStorage.getItem("pageData");
     },
 
 }
