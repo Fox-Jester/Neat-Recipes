@@ -26,6 +26,7 @@ const App = {
             console.log(localStorage.getItem("createRecipe"))
             const newRecipe = new Recipe();
             newRecipe.create();
+            
             this.savePage();
             localStorage.setItem("createRecipe", null);
             
@@ -59,9 +60,11 @@ const App = {
                 
                 cards.forEach((card) =>
                     card.addEventListener("click", (e) =>{
-                        console.log(card.id);
+                        
                         const idNum = this.extract(card.id)
+                       
                         localStorage.setItem("idData", idNum)
+
                         window.location.href = "/view/view.html";
                     }));
                 
@@ -205,7 +208,7 @@ function Recipe() {
 
         this.name = localStorage.getItem(`nameData${this.counter}`);
         this.prepDataHour = localStorage.getItem(`prepDataHour${this.counter}`);
-        console.log(`prepDataHour${this.counter}`)
+        
         this.prepDataMins = localStorage.getItem(`prepDataMins${this.counter}`);
         this.cookDataHour = localStorage.getItem(`cookDataHour${this.counter}`);
         this.cookDataMins = localStorage.getItem(`cookDataMins${this.counter}`);
@@ -220,7 +223,8 @@ function Recipe() {
         this.starBtn = document.createElement("i")
         this.xBtn = document.createElement("i")
         
-        
+    
+       
         this.imgChanger = function(src) {
             if(src){
                 return src
@@ -285,7 +289,7 @@ function Recipe() {
         this.card.innerHTML = ` <div class="card-name-block">
             <h4 class="card-name">${this.name}</h4>
             </div>
-            <img id="img-preview" src=${this.imgChanger(this.imgData)} alt="" />
+            <img class="img-preview" src=${this.imgChanger(this.imgData)} alt="" />
             <ul class="card-list">
             
             ${this.prepTime(this.prepDataHour, this.prepDataMins)}
@@ -303,6 +307,6 @@ function Recipe() {
 
     }
 
-    
+  
     App.init()
 

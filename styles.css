@@ -6,8 +6,8 @@
     --btn-color-secondary:linear-gradient(90deg, rgb(254, 189, 68), rgb(255, 157, 0));
     --btn-color-secondary-hover: linear-gradient(90deg, rgb(238, 167, 33), rgb(219, 135, 0));
 
-    --border-radius: 40px
-
+    --border-radius: 40px;
+    --recipe-block-color: linear-gradient(130deg, rgb(248, 236, 214), rgb(249, 244, 237));
 }
 
 *{
@@ -67,9 +67,11 @@ input[type=number] {
 
 .logo-text {
     font-size: 2.2rem;
+    font-weight: 600;
     padding: 1rem 2rem;
     color: white;
     text-shadow: 0 0 3px black;
+    font-family: "Marcellus", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 a {
@@ -307,10 +309,21 @@ a .logo {
 
 
 /* creation page */
-#creation-container {
+.page-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.page-container--shadow {
+    box-shadow: 0 0 3px black;
+    border-radius: 20px;
+    overflow-y: hidden;
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+    width: 60vw;
+ 
+    background: linear-gradient(130deg, rgb(248, 211, 167), rgb(213, 195, 172));
 }
 
 
@@ -330,23 +343,70 @@ a .logo {
     background: linear-gradient(90deg, rgb(254, 189, 68), rgb(255, 157, 0));
 }
 
+.recipe-lable {
+    display: inline-block;
+    width: fit-content;
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 3px black;
+    margin: 1.5rem 2rem;
+   
+}
+
+.special-lable{
+    background: linear-gradient(130deg,turquoise, rgb(52, 216, 200) );
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 3px black;
+    margin: 2rem 2rem;
+}
+
 .name-lable {
     margin-top: 0;
 }
 
 .creation-text {
     font-size: 2.2rem;
-    padding: 1rem;
+    padding: 1rem 2rem;
     color: white;
     text-shadow: 0 0 3px black;
+    font-family: "Marcellus",system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.recipe-text{
+    font-size: 2.2rem;
+    font-weight: 600;
+    padding: 1.5rem 2.5rem;
+    color: white;
+    text-shadow: 0 0 3px black;
+    font-family: "Marcellus";
 }
 
 .option-lable {
     margin-top: 2rem;
     width: 12rem;
-    background: linear-gradient(90deg, turquoise, rgb(111, 255, 241));
+    background: linear-gradient(90deg, cyan, rgb(105, 255, 240));
     margin-bottom: 1rem;
 
+}
+
+.recipe-box{
+    text-align: center;
+    width: 100%;
+    
+
+}
+
+
+
+
+.recipe-name {
+    font-size: 3rem;
+    padding: 2rem 4rem;
+    color: white;
+    font-weight: 600;
+    text-shadow: 0 0 3px black;
+    font-family: "Marcellus", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .option-text {
@@ -360,15 +420,84 @@ a .logo {
    
 }
 
+
+
 /* INPUT TEXT */
 
 .input-text {
     font-size: 1.8rem;
     padding: 1rem 1.5rem;
-
+    
 }
 
 
+
+/* OPTIONAL-CONTAINER */
+
+
+
+.optional-container{
+
+    display: flex;
+   
+    
+    justify-content: space-evenly;
+    background: var(--recipe-block-color);
+
+    width: 100%;
+    padding: 2rem 2rem;
+}
+
+.optional-container img {
+    height: 30rem;
+    width: 30rem;
+}
+
+.optional-list{
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin-left: 2rem;
+   
+}
+
+.optional-list li {
+    margin: 2rem 0;
+}
+
+.description-text{
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+
+}
+
+#ingrediant-container {
+    background: var(--recipe-block-color);
+    align-content: space-evenly;
+    max-height: 28rem;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    overflow-y: auto;
+    padding: 2rem 4rem;
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+#ingrediant-container li {
+    margin: 1rem 0;
+}
+
+#instruction-container{
+    background:  var(--recipe-block-color);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+    padding: 2rem 4rem;
+}
+
+#instruction-container li {
+    margin: 1rem 0;
+}
 /* INGREDIANT LIST */
 
 #ingrediant-list{
@@ -473,7 +602,7 @@ a .logo {
 
 
 
-#img-preview{
+.img-preview{
     width: 20rem;
     height: 20rem;
 }

@@ -71,6 +71,7 @@ const App = {
         descriptionData: "",
         ingrediantData: "",
         instructionData: "",
+
         prepDataHour: "",
         prepDataMins: "",
         cookDataHour: "",
@@ -94,6 +95,27 @@ const App = {
         localStorage.setItem(`imgData${this.$.counter}`, this.info.imgData);
         localStorage.setItem("counterData", this.$.counter);
     },
+
+    ingredInfoSet(){
+        const ingreds = document.querySelectorAll(".ingrediant")
+        let string = ``
+        ingreds.forEach(ingred => {
+            string += `<li>${ingred.innerHTML}</li> `
+        })
+        
+        return string
+    },
+
+    instructInfoSet(){
+        const instructions = document.querySelectorAll(".ingrediant")
+        let string = ``
+        instructions.forEach(instruct => {
+            string += `<li>${instruct.innerHTML}</li> `
+        })
+        
+        return string
+    },
+
 
     applyName() {
         const nameInput = document.querySelector("#name-input")
@@ -156,18 +178,19 @@ const App = {
             if (this.validator(this.$.ingrediantInput.value)){
                 const wrapper = document.createElement("div")
                 wrapper.classList.add("instruction-group");
-                wrapper.innerHTML = `<p class="imput-text">${this.$.ingrediantInput.value}</p> <button class="btn  
+                wrapper.innerHTML = `<li class="ingrediant imput-text">${this.$.ingrediantInput.value}</li> <button class="btn  
                 x-btn" ><i class="fa-solid fa-x"></i></i></button>`
-
+                
+                
                 this.$.ingrediantList.appendChild(wrapper);
                 this.$.ingrediantInput.value = "";
-                    let xBtns = document.querySelectorAll(".x-btn")
-                    xBtns.forEach((btn) => 
-                        btn.removeEventListener("click", this.delete));
-                    xBtns.forEach((btn) => 
-                        btn.addEventListener("click", this.delete));
+                let xBtns = document.querySelectorAll(".x-btn")
+                xBtns.forEach((btn) => 
+                    btn.removeEventListener("click", this.delete));
+                xBtns.forEach((btn) => 
+                    btn.addEventListener("click", this.delete));
+                
           
-
                 
             }
         })
@@ -178,7 +201,7 @@ const App = {
             if (this.validator(this.$.instructionArea.value)){
                 const wrapper = document.createElement("div")
                 wrapper.classList.add("instruction-group");
-                wrapper.innerHTML = `<li class="imput-text">${this.$.instructionArea.value}</li> <button class="btn  
+                wrapper.innerHTML = `<li class="instruction imput-text">${this.$.instructionArea.value}</li> <button class="btn  
                 x-btn" ><i class="fa-solid fa-x"></i></button>`
 
                 this.$.instructionList.appendChild(wrapper);
@@ -309,8 +332,8 @@ const App = {
 
     createRecipe() {
         this.$.finishBtn.addEventListener("click", (e) => {
-            this.info.ingrediantData = this.$.ingrediantList.innerHTML;
-            this.info.instructionData = this.$.instructionList.innerHTML;
+            this.info.ingrediantData = this.ingredInfoSet();
+            this.info.instructionData = this.instructInfoSet();
             this.info.imgData = this.$.imagePreview.src;
             if(!this.info.nameData) {
                 alert("Enter a name!");

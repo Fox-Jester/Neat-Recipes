@@ -7,19 +7,6 @@ ___JS___
 
 
 
-__STEP.2__ PAGE1
-
-
-fix counter number
-not incrementing.
-
-
-
-
-
-
-
-
 
 __STEP3__ PAGE3
 
@@ -27,9 +14,19 @@ Create 3rd page.
 
 
 
+in Recipe creation change ingrediants data into li,
+
+add classes to the li's and save the data of the classes.
+
+check for typos
+
+
+
 
 
 
 ideas:
+
+define character limits
 
 btn animation

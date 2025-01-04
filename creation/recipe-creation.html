@@ -5,10 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipe Creator</title>
     <link rel="stylesheet" href="/styles.css" />
+
     <script
       src="https://kit.fontawesome.com/e186fe6458.js"
       crossorigin="anonymous"
     ></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Concert+One&family=Marcellus&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <a href="/index.html"
@@ -16,7 +24,7 @@
         <h1 class="logo-text">Neat <br />Recipes</h1>
       </div></a
     >
-    <div id="creation-container">
+    <div class="page-container">
       <div class="lable lable-primary name-lable">
         <h2 class="creation-text">Name</h2>
       </div>
@@ -173,7 +181,12 @@
         <div class="card-name-block">
           <h4 id="card-name" class="card-name"></h4>
         </div>
-        <img id="img-preview" src="/food-wallpaper.png" alt="" />
+        <img
+          id="img-preview"
+          class="img-preview"
+          src="/food-wallpaper.png"
+          alt=""
+        />
         <ul class="card-list">
           <li id="prep-li" class="hide"></li>
           <li id="cook-li" class="hide"></li>
