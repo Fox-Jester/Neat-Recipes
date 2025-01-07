@@ -326,7 +326,14 @@ const App = {
     
     imgChange() {
         this.$.imgInput.onchange = () => {
-            this.$.imagePreview.src = URL.createObjectURL(this.$.imgInput.files[0]);
+            const fr = new FileReader();
+            fr.readAsDataURL(this.$.imgInput.files[0]);
+            
+            fr.addEventListener('load', () => {
+                const url = fr.result;
+                this.$.imagePreview.src = url
+                this.info.imgData = url;
+            })
         }
     },
 
@@ -334,7 +341,6 @@ const App = {
         this.$.finishBtn.addEventListener("click", (e) => {
             this.info.ingrediantData = this.ingredInfoSet();
             this.info.instructionData = this.instructInfoSet();
-            this.info.imgData = this.$.imagePreview.src;
             if(!this.info.nameData) {
                 alert("Enter a name!");
                 return;

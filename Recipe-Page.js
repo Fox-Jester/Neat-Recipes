@@ -227,6 +227,7 @@ function Recipe() {
        
         this.imgChanger = function(src) {
             if(src){
+                
                 return src
             }
             else {
@@ -289,7 +290,7 @@ function Recipe() {
         this.card.innerHTML = ` <div class="card-name-block">
             <h4 class="card-name">${this.name}</h4>
             </div>
-            <img class="img-preview" src=${this.imgChanger(this.imgData)} alt="" />
+            <img class="img-preview" src="${this.imgChanger(this.imgData)}" alt="" />
             <ul class="card-list">
             
             ${this.prepTime(this.prepDataHour, this.prepDataMins)}

@@ -3,24 +3,56 @@
 ___JS___
 
 
+  
+      <div class="optional-container">
+          <img id="view-img" src="/food-wallpaper.png" alt="" />
 
+          <div class="optional-text-box">
+            <ul class="optional-list">
+              <li>prep time: 3hours & 4mins</li>
+              <li>Cook time: 33hours & 43mins</li>
+              <li>Servings: 4</li>
+            </ul>
+            <div class="description-text">
+              <h3>
+                super yummy and deliocius tacos of the highest quality! yum yum
+                yumy umny uymuy myuymy ymyu
+              </h3>
+            </div>
+          </div>
+        </div>
+       
+
+       
+         
+       
+
+     
 
 
 
 
 __STEP3__ PAGE3
 
-Create 3rd page.
+make optional times, and servings into flex if no img.
+make optional text box flex column without img
+
+make optional list, optional container added dynamically.
 
 
 
-in Recipe creation change ingrediants data into li,
 
-add classes to the li's and save the data of the classes.
+
+__final-touch__
+make 3 page link not work with star and delete.
+make enter key work on some stuff.
+fix ingrediants dot being to far
+make instruction input bigger.
+add responsive btns to option inputs
 
 check for typos
 
-
+animation
 
 
 
