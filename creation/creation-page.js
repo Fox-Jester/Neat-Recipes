@@ -107,7 +107,7 @@ const App = {
     },
 
     instructInfoSet(){
-        const instructions = document.querySelectorAll(".ingrediant")
+        const instructions = document.querySelectorAll(".instruction")
         let string = ``
         instructions.forEach(instruct => {
             string += `<li>${instruct.innerHTML}</li> `

@@ -21,14 +21,17 @@ const App = {
             optionalList: document.querySelector(".optional-list"),
             descriptionText: document.querySelector(".description-text"),
             descriptionInput: document.querySelector("#description-input"),
+
+            ingrediantContainer: document.querySelector("#ingrediant-container"),
+            instructionContainer: document.querySelector("#instruction-container")
         },
         
     applyInfo(){
         console.log(this.$.id)
         this.$.name = localStorage.getItem(`nameData${this.$.id}`)
        
-        this.$.ingrediant = localStorage.getItem(`ingrediantData${this.$.id}`)
-        this.$.instruction = localStorage.getItem(`instructionData${this.$.id}`)
+        this.$.ingrediantData = localStorage.getItem(`ingrediantData${this.$.id}`)
+        this.$.instructionData = localStorage.getItem(`instructionData${this.$.id}`)
 
         this.$.prepDataHour = localStorage.getItem(`prepDataHour${this.$.id}`)
         this.$.prepDataMins = localStorage.getItem(`prepDataMins${this.$.id}`)
@@ -51,6 +54,8 @@ const App = {
         this.applyDescript()
         this.optListChange()
         this.applyImgBuff()
+        this.applyIngrediants()
+        this.applyInstructions()
     },
 
     optionalCheck(){
@@ -188,6 +193,14 @@ const App = {
                 return ""
             }
         
+    },
+
+    applyIngrediants(){
+        this.$.ingrediantContainer.innerHTML = this.$.ingrediantData;
+    },
+
+    applyInstructions(){
+        this.$.instructionContainer.innerHTML = this.$.instructionData;
     },
    
 
