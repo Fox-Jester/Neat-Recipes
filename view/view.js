@@ -16,6 +16,8 @@ const App = {
             ingrediantData: '',
             instructionData: '',
 
+
+            recipeName: document.querySelector(".recipe-name"),
             optionalContainer: document.querySelector(".optional-container"),
             imgSlot: document.querySelector("#view-img"),
             optionalList: document.querySelector(".optional-list"),
@@ -47,6 +49,7 @@ const App = {
 
     init() {
         this.applyInfo()
+        this.applyName()
         this.optionalCheck()
         this.applyImg()
         this.optListCheck()
@@ -56,6 +59,10 @@ const App = {
         this.applyImgBuff()
         this.applyIngrediants()
         this.applyInstructions()
+    },
+
+    applyName(){
+        this.$.recipeName.innerHTML = this.$.name;
     },
 
     optionalCheck(){
@@ -93,9 +100,14 @@ const App = {
 
     applyImgBuff(){
         const img = document.querySelector("#view-img")
+         const optList = document.querySelector(".optional-list")
+         const descripText = document.querySelector(".description-text")
+         console.log(img)
+         console.log(optList)
+         console.log(descripText)
         if(img){
-            if(!(this.$.optionalList && this.$.descriptionText)){
-                img.classList.toggle("img-buff");
+            if(!((optList) && (descripText))){
+                img.classList.add("img-buff");
             }
         }
     },

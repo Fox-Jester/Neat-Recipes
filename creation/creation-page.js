@@ -45,10 +45,10 @@ const App = {
     },
 
     init(){
-            this.applyName()
-            this.applyDescription()
-            this.applyIngrediants()
-            this.applyInstructions()
+            this.applyNameEL()
+            this.applyDescriptionEL()
+            this.applyIngrediantsEL()
+            this.applyInstructionsEL()
             this.applyPrepTime()
             this.applyCookTime()
             this.applyServings()
@@ -117,39 +117,70 @@ const App = {
     },
 
 
-    applyName() {
+    applyNameEL() {
         const nameInput = document.querySelector("#name-input")
         const nameBtn = document.querySelector("#name-btn")
 
+        nameInput.addEventListener("keydown", (e) => {
+            if (e.key === "Enter"){
+                this.applyName()
+            }
+        })
 
         nameBtn.addEventListener("click", (e) => {
-            if (this.validator(nameInput.value)){
-                this.$.cardName.innerHTML = nameInput.value;
-                this.info.nameData = nameInput.value;
-                nameBtn.remove();
-                nameInput.remove();
-                
-                this.$.nameGroup.innerHTML = `<p class="input-text">${nameInput.value}</p> <button id="name-redo-btn" class="btn btn-primary redo-btn"><i class="fa-solid fa-rotate-right"></i></button>`
-
-                const redoBtn = document.querySelector("#name-redo-btn");
-
-                redoBtn.addEventListener("click", (e) => {
-                    App.$.nameGroup.innerHTML = `<input type="text" id="name-input" class="input add-input"
-                            placeholder="Add a Name"/> <button id="name-btn" class="btn btn-primary add-btn">ENTER</button>`
-                    this.applyName()
-
-                })
-
-            }
+            this.applyName()
         })
 
     },
 
+    applyName(){
 
-    applyDescription() {
+        const nameInput = document.querySelector("#name-input")
+        const nameBtn = document.querySelector("#name-btn")
+
+
+
+        if (this.validator(nameInput.value)){
+            this.$.cardName.innerHTML = nameInput.value;
+            this.info.nameData = nameInput.value;
+            nameBtn.remove();
+            nameInput.remove();
+            
+            this.$.nameGroup.innerHTML = `<p class="input-text">${nameInput.value}</p> <button id="name-redo-btn" class="btn btn-primary redo-btn"><i class="fa-solid fa-rotate-right"></i></button>`
+
+            const redoBtn = document.querySelector("#name-redo-btn");
+
+            redoBtn.addEventListener("click", (e) => {
+                App.$.nameGroup.innerHTML = `<input type="text" id="name-input" class="input add-input"
+                        placeholder="Add a Name"/> <button id="name-btn" class="btn btn-primary add-btn">ENTER</button>`
+                this.applyNameEL()
+
+            })
+
+        }
+    },
+    applyDescriptionEL() {
         const descriptionInput = document.querySelector("#description-input");
         const descriptionBtn = document.querySelector("#description-btn");
+
+        descriptionInput.addEventListener("keydown", (e) => {
+            if(e.key === "Enter"){
+                this.applyDescription()
+
+            }
+        })
+
         descriptionBtn.addEventListener("click", (e) => {
+            this.applyDescription()
+        })
+
+    },
+
+    applyDescription(){
+
+        const descriptionInput = document.querySelector("#description-input");
+        const descriptionBtn = document.querySelector("#description-btn");
+
             if (this.validator(descriptionInput.value)){
                 this.info.descriptionData = descriptionInput.value;
                 descriptionBtn.remove();
@@ -163,18 +194,34 @@ const App = {
                 redoBtn.addEventListener("click", (e) => {
                     this.$.descriptionGroup.innerHTML = `<input type="text" id="description-input" class="input add-input"
                             placeholder="Quick description"/> <button id="description-btn" class="btn btn-primary add-btn">ENTER</button>`
-                    this.applyDescription();
+                    this.applyDescriptionEL();
 
                 })
 
             }
-        })
+        
+
 
     },
 
+    applyIngrediantsEL() {
 
-    applyIngrediants() {
+        this.$.ingrediantInput.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                this.applyIngrediants()
+            }
+        })
+
+
         this.$.ingrediantBtn.addEventListener("click", (e) => {
+            this.applyIngrediants()
+        })
+    },
+
+    applyIngrediants(){
+
+
+       
             if (this.validator(this.$.ingrediantInput.value)){
                 const wrapper = document.createElement("div")
                 wrapper.classList.add("instruction-group");
@@ -193,11 +240,31 @@ const App = {
           
                 
             }
-        })
+        
+
+
     },
 
-    applyInstructions() {
+    applyInstructionsEL() {
+
+        this.$.instructionArea.addEventListener("keydown", (e) =>{
+            if (e.key === "Enter") {
+                this.applyInstructions();
+                dk
+                
+            }
+        })
+
+
         this.$.instructionBtn.addEventListener("click", (e) => {
+            this.applyInstructions();
+            })
+    },
+
+
+    applyInstructions(){
+
+        
             if (this.validator(this.$.instructionArea.value)){
                 const wrapper = document.createElement("div")
                 wrapper.classList.add("instruction-group");
@@ -212,9 +279,12 @@ const App = {
                     xBtns.forEach((btn) => 
                         btn.addEventListener("click", this.delete));
                 }
-            })
-    },
 
+             
+           
+
+
+    },
 
     validator(value){
         const regex = /\S/;

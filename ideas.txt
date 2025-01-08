@@ -34,25 +34,17 @@ ___JS___
 
 __STEP3__ PAGE3
 
-make optional times, and servings into flex if no img.
-make optional text box flex column without img
-
-make optional list, optional container added dynamically.
 
 
 
 
 
 __final-touch__
-make 3 page link not work with star and delete.
-make enter key work on some stuff.
-fix ingrediants dot being to far
-make instruction input bigger.
-add responsive btns to option inputs
+
 
 check for typos
 
-animation
+
 
 
 
@@ -61,4 +53,3 @@ ideas:
 
 define character limits
 
-btn animation

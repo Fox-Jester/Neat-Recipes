@@ -96,8 +96,40 @@ a .logo {
     border: 0;
     font-weight: 600;
     box-shadow: 0 0 3px grey;
+    cursor: pointer;
+    position: relative;
     
 }
+
+.btn:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    box-shadow: 0 0 10px 10px black;
+}
+
+.btn:active:after {
+    box-shadow: 0 0 0 0 white;
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top:0;
+    opacity: 1;
+    transition: 0s;
+}
+
+.btn:active {
+      transition-duration: 0.4s;
+      -webkit-transition-duration: 0.4s; 
+    top: 1px;
+  }
 
 .btn-primary {
     background: var(--btn-color);
@@ -156,7 +188,7 @@ a .logo {
     color: rgb(254, 181, 45);
 }
 .star-btn:hover{
-    color: orange
+    color: rgb(227, 149, 2);
 }
 
 .stared-btn{
@@ -164,7 +196,7 @@ a .logo {
 }
 
 .stared-btn:hover{
-    color: orange;
+    color: rgb(227, 149, 2);
 }
 
 #star-filter {
@@ -172,7 +204,7 @@ a .logo {
 }
 
 #star-filter:hover{
-    color: orange;
+    color: rgb(227, 149, 2);
 }
 
 .refresh-btn{
@@ -187,8 +219,16 @@ a .logo {
     padding: 1rem 1.5rem;
     margin-top: 0.5rem;
     border-radius: 10px;
-
+    position: relative;
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s; 
+    
 }
+
+
+  
+
+  
 
 .instruct-btn {
     border-radius: 20px;
@@ -269,18 +309,16 @@ a .logo {
 .instruction-group {
     align-items: center;
     display: flex;
-   
     margin: 1.5rem 2rem;
 }
 
-.instruction-group p {
-    font-size: 1.6rem;
-}
 
 .instruction-group li {
     font-size: 1.6rem;
     
 }
+
+
 
 .option-group {
     display: flex;
@@ -320,6 +358,13 @@ a .logo {
 }
 
 
+#add-recipe {
+    color: rgb(49, 184, 171);
+}
+
+#add-recipe:hover {
+    color: turquoise;
+}
 /* creation page */
 .page-container {
     display: flex;
@@ -440,7 +485,7 @@ a .logo {
 
 .input-text {
     font-size: 1.8rem;
-    padding: 1rem 1.5rem;
+    padding: 1.5rem 1.5rem;
     
 }
 
@@ -460,12 +505,12 @@ a .logo {
     padding: 2rem 2rem;
 }
 
-.optional-container img {
+#view-img {
     height: 30rem;
     width: 30rem;
 }
 
-.img-buff{
+#view-img.img-buff{
     height: 40rem;
     width: 40rem;
 }
@@ -478,22 +523,28 @@ a .logo {
     flex-direction: column;
 }
 
-.flex-row {
-    flex-direction: row;
-}
-
-
-.optional-text-box{
-
-}
-
 .optional-list li {
     margin: 2rem 0;
 }
+.flex-row {
+    flex-direction: row;
+    justify-content: space-evenly;
+    justify-content: center
+    
+}
+
+.flex-row.optional-list li {
+    margin: 0 2rem 2rem 4rem;
+}
+
+
+
 
 .description-text{
     font-size: 1.6rem;
     padding: 1rem 2rem;
+    width: 90%;
+    justify-self: center;
 
 }
 .description-text h3 {
@@ -575,7 +626,8 @@ a .logo {
     padding: 1rem 1.5rem;
     outline: 0;
     border: 0;
-    width: 30rem;
+    width: 45rem;
+    height: 10rem;
     flex-grow: 1;
     margin: 3px;
 
@@ -623,6 +675,7 @@ a .logo {
     text-align: center;
     color: white;
     text-shadow: 0 0 3px black;
+    margin-top: 1rem;
 }
 
 .img-btn:hover {
@@ -654,6 +707,10 @@ a .logo {
     flex-direction: column;
     text-align: center;
     align-items: center;
+}
+
+.card:hover {
+    transform: scale(1.1);
 }
 
 .card-name-block {

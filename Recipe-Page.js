@@ -60,12 +60,13 @@ const App = {
                 
                 cards.forEach((card) =>
                     card.addEventListener("click", (e) =>{
-                        
-                        const idNum = this.extract(card.id)
-                       
-                        localStorage.setItem("idData", idNum)
+                        if (!((e.target.classList.contains("fa-star")) || (e.target.classList.contains("fa-x")))){
+                            const idNum = this.extract(card.id)
+                            localStorage.setItem("idData", idNum)
+    
+                            window.location.href = "/view/view.html";
 
-                        window.location.href = "/view/view.html";
+                        }
                     }));
                 
 
@@ -102,6 +103,7 @@ const App = {
                     if((value === "") && (document.querySelector(".refresh-btn"))){
                         const refreshBtn = document.querySelector(".refresh-btn");
                         refreshBtn.remove()
+                        this.searchInput();
                     }
                 })
            
