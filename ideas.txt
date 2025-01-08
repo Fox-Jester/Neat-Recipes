@@ -42,14 +42,6 @@ __STEP3__ PAGE3
 __final-touch__
 
 
-check for typos
-
-
-
-
-
-
-ideas:
 
 define character limits
 

@@ -90,7 +90,6 @@ a .logo {
 /* BUTTON */
 
 
-
 .btn {
     border-radius: var(--border-radius);
     border: 0;
@@ -163,7 +162,7 @@ a .logo {
 }
 
 .x-btn {
-    font-size: 1rem;
+    font-size: 1.5rem;
     padding-left: 0.5rem;
     border-radius: 50%;
     margin: 2px;
@@ -310,12 +309,16 @@ a .logo {
     align-items: center;
     display: flex;
     margin: 1.5rem 2rem;
+
+    
 }
 
 
 .instruction-group li {
     font-size: 1.6rem;
-    
+    max-width: 100%;
+    overflow-wrap: break-word;
+  
 }
 
 
@@ -379,6 +382,7 @@ a .logo {
     margin-top: 5rem;
     margin-bottom: 10rem;
     width: 60vw;
+    overflow-x: hidden;
  
     background: linear-gradient(130deg, rgb(248, 211, 167), rgb(213, 195, 172));
 }
@@ -486,6 +490,8 @@ a .logo {
 .input-text {
     font-size: 1.8rem;
     padding: 1.5rem 1.5rem;
+    max-width: 100%;
+    overflow-wrap: break-word;
     
 }
 
@@ -549,8 +555,9 @@ a .logo {
 }
 .description-text h3 {
     font-family: var(--fancy-font);
-    
     text-shadow: 0 0 2px white;
+    overflow-wrap: break-word;
+    max-width: 80%;
     
 }
 
@@ -559,7 +566,7 @@ a .logo {
     align-content: space-evenly;
     
     display: grid;
-    grid-template-columns: repeat(5, auto);
+    grid-template-columns: repeat(4, auto);
    
     padding: 2rem 4rem;
     font-size: 1.5rem;
@@ -568,6 +575,10 @@ a .logo {
 
 #ingrediant-container li {
     margin: 1rem 0;
+    
+   
+    
+
 }
 
 #instruction-container{
@@ -581,6 +592,9 @@ a .logo {
 
 #instruction-container li {
     margin: 1rem 0;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    
 }
 /* INGREDIANT LIST */
 
@@ -728,7 +742,7 @@ a .logo {
 
 .card-name {
     color: white;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     text-shadow: 0 0 3px black;
 
     

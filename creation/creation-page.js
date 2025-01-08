@@ -152,7 +152,7 @@ const App = {
 
             redoBtn.addEventListener("click", (e) => {
                 App.$.nameGroup.innerHTML = `<input type="text" id="name-input" class="input add-input"
-                        placeholder="Add a Name"/> <button id="name-btn" class="btn btn-primary add-btn">ENTER</button>`
+                        placeholder="Add a Name" maxlength="26"/> <button id="name-btn" class="btn btn-primary add-btn">ENTER</button>`
                 this.applyNameEL()
 
             })
@@ -193,7 +193,7 @@ const App = {
 
                 redoBtn.addEventListener("click", (e) => {
                     this.$.descriptionGroup.innerHTML = `<input type="text" id="description-input" class="input add-input"
-                            placeholder="Quick description"/> <button id="description-btn" class="btn btn-primary add-btn">ENTER</button>`
+                            placeholder="Quick description" maxlength="80"/> <button id="description-btn" class="btn btn-primary add-btn">ENTER</button>`
                     this.applyDescriptionEL();
 
                 })
