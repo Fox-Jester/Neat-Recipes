@@ -54,7 +54,6 @@ input[type=number] {
     padding: 0.5rem;
     align-items: center;
     width: 74rem;
-    
     margin: 4rem 0;
 }
 
@@ -71,7 +70,6 @@ input[type=number] {
     margin-right: 1rem;
 
 }
-
 
 .logo-text {
     font-size: 2rem;
@@ -354,6 +352,8 @@ a .logo {
     font-size: 5rem;
     margin: 0 1rem;
 }
+
+
 
 
 #add-recipe {
@@ -750,14 +750,7 @@ font-size: 1.8rem;
     display: none;
 }
 
-
-
-.img-preview{
-    width: 20rem;
-    height: 20rem;
-}
-
-
+/* ___FIRSTPAGE___ */
 #recipe-box {
     border-radius: 10px;
     justify-content: center;
@@ -767,6 +760,13 @@ font-size: 1.8rem;
     overflow-y: auto;
     
 }
+
+.img-preview{
+    width: 20rem;
+    height: 20rem;
+}
+
+
 
 .card {
     background: antiquewhite;
@@ -791,22 +791,17 @@ font-size: 1.8rem;
 .card-name-block {
     background: var(--btn-color);
     border-radius: 10px;
-    
     width: 20rem;
-    
     margin-bottom: 0.5rem;
     justify-content: center;
     padding: 0.5rem;
     box-shadow: 0 0 2px black;
-    
 }
 
 .card-name {
     color: white;
     font-size: 1.2rem;
     text-shadow: 0 0 3px black;
-    
-    
 }
 
 .card-list {
@@ -834,6 +829,292 @@ font-size: 1.8rem;
     justify-self: end;
 }
 
+/* FIRST PAGE MEDIA QUREY */
+
+@media screen and (max-width: 1360px){
+    #recipe-box {
+        grid-template-columns: repeat(4, auto);
+    }
+}
+
+@media screen and (max-width: 1075px) {
+    #recipe-box {
+        grid-template-columns: repeat(3, auto);
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    #header-box {
+        width: 60rem;
+    }
+
+    .logo {
+
+        width: 12rem;
+
+    }
+    
+    .logo-text {
+        font-size: 1.6rem;
+      
+        padding: 1rem 1.5rem;
+      
+    }
+
+
+    .icon {
+        font-size: 4rem;
+        margin: 0 1rem;
+    }
+    
+    #search-btn {
+        font-size: 1.2rem;
+        padding: 1.2rem 1.6rem;
+        margin: 4px;
+        
+    }
+    
+    #search-bar {
+        font-size: 1.4rem;
+        padding: 0.5rem  0.5rem 0.5rem 1rem;
+
+    }
+
+
+
+    .img-preview{
+        width: 18rem;
+        height: 18rem;
+    }
+    
+    .card { 
+        width: 20rem;
+        
+        margin: 1.5rem 2rem;
+        padding: 1rem;
+    }
+
+    .card-name-block {
+        width: 18rem;
+    }
+
+    .card-name {
+        font-size: 1rem;
+    }
+    .card-list {
+        margin-top: 0.5rem;
+        font-size: 1rem;
+        height: 5rem;
+    }
+    .card-bottom i {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 700px){
+    
+
+    .img-preview{
+        width: 14rem;
+        height: 14rem;
+    }
+    
+    .card { 
+        width: 15rem;
+        
+        margin: 1rem 1.5rem;
+        padding: 0.5rem;
+    }
+
+    .card-name-block {
+        width: 14rem;
+    }
+
+    .card-name {
+        font-size: 0.8rem;
+    }
+    .card-list {
+        margin-top: 0.4rem;
+        font-size: 0.8rem;
+        height: 4rem;
+    }
+    .card-bottom i {
+        font-size: 1.6rem;
+    }
+}
+@media screen and (max-width: 610px){
+
+    #header-box {
+        width: 50rem;
+        margin: 3rem;
+    }
+
+    .logo {
+        width: 10rem;
+    }
+    
+    .logo-text {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.2rem;
+      
+    }
+
+    .icon {
+        font-size: 3rem;
+        margin: 0 0.5rem;
+    }
+    
+    #search-btn {
+        font-size: 1rem;
+        padding: 1rem 1.2rem;
+        margin: 4px;
+        
+    }
+    
+    #search-bar {
+        font-size: 1.2rem;
+        padding: 0.5rem  0.5rem 0.5rem 1rem;
+
+    }
+
+}
+
+@media screen and (max-width: 540px) {
+
+    #header-box {
+        width: 40rem;
+        margin-bottom: 2rem;
+    }
+
+    .logo {
+        width: 6rem;
+    }
+    
+    .logo-text {
+        font-size: 0.9rem;
+        padding: 0.8rem 1rem;
+      
+    }
+
+    .icon {
+        font-size: 2.5rem;
+        margin: 0 0.5rem;
+    }
+    
+    #search-btn {
+        font-size: 0.9rem;
+        padding: 0.8rem 1rem;
+        margin: 3px;
+        
+    }
+    
+    #search-bar {
+        font-size: 1rem;
+        padding: 0.3rem  0.3rem 0.3rem 0.8rem;
+
+    }
+
+
+    .img-preview{
+        width: 10rem;
+        height: 10rem;
+    }
+    
+    .card { 
+        width: 11rem;
+        
+        margin: 1rem 1rem;
+        padding: 0.4rem;
+    }
+
+    .card-name-block {
+        width: 10rem;
+    }
+
+    .card-name {
+        font-size: 0.6rem;
+    }
+    .card-list {
+        margin-top: 0.3rem;
+        font-size: 0.6rem;
+        height: 3rem;
+    }
+    .card-bottom i {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 410px) {
+
+
+    #recipe-box {
+        grid-template-columns: repeat(2, auto);
+    }
+
+    #header-box {
+        width: 31rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .logo {
+        width: 5rem;
+        margin-right: 0.5rem;
+    }
+    
+    .logo-text {
+        font-size: 0.8rem;
+        padding: 0.6rem 0.8rem;
+      
+    }
+
+    .icon {
+        font-size: 2rem;
+        margin: 0 0.3rem;
+    }
+    
+    #search-btn {
+        font-size: 0.7rem;
+        padding: 0.8rem 0.8rem;
+        margin: 3px;
+        
+    }
+    
+    #search-bar {
+        font-size: 1rem;
+        padding: 0.3rem  0.3rem 0.3rem 0.8rem;
+
+    }
+
+
+    .img-preview{
+        width: 10rem;
+        height: 10rem;
+    }
+    
+    .card { 
+        width: 11rem;
+        
+        margin: 1rem 1rem;
+        padding: 0.4rem;
+    }
+
+    .card-name-block {
+        width: 10rem;
+    }
+
+    .card-name {
+        font-size: 0.6rem;
+    }
+    .card-list {
+        margin-top: 0.3rem;
+        font-size: 0.6rem;
+        height: 3rem;
+    }
+    .card-bottom i {
+        font-size: 1.4rem;
+    }
+}
 .hide {
     display: none;
 }
