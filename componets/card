@@ -2,7 +2,7 @@
   <div class="card-name-block">
     <h4 class="card-name">NAME</h4>
   </div>
-  <img id="img-preview" src="/food-wallpaper.png" alt="" />
+  <img class="img-preview" src="/food-wallpaper.png" alt="" />
   <ul class="card-list">
     <li>prep time: 5hours & 10mins</li>
     <li>cook time: 20mins</li>

@@ -25,6 +25,7 @@ html {
 }
 
 
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -40,15 +41,21 @@ input[type=number] {
 
 /* HEADER-BOX */
 
+#header-container{
+    justify-items: center;
+}
+
+
 #header-box {
-    border-radius: var(--border-radius);
+    border-radius: 60px ;
     box-shadow: 0 0 10px grey;
     display: flex;
     justify-content: space-around;
-    padding: 1rem;
+    padding: 0.5rem;
     align-items: center;
-    margin: 5rem 15rem;
-    margin-bottom: 4rem;
+    width: 74rem;
+    
+    margin: 4rem 0;
 }
 
 
@@ -67,9 +74,9 @@ input[type=number] {
 
 
 .logo-text {
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 600;
-    padding: 1rem 2rem;
+    padding: 1rem 1.8rem;
     color: white;
     text-shadow: 0 0 3px black;
     font-family: "Marcellus", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -207,10 +214,13 @@ a .logo {
 }
 
 .refresh-btn{
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin-right: 2rem;
     color: grey;
     font-weight: 600;
+}
+.refresh-btn:hover{
+    color: orange;
 }
 
 .option-btn {
@@ -229,12 +239,6 @@ a .logo {
 
   
 
-.instruct-btn {
-    border-radius: 20px;
-    font-size:1.6rem;
-    padding: 1.5rem 2rem;
-    margin: 6px;
-}
 
 #finish-btn {
     font-size: 3.2rem;
@@ -246,7 +250,7 @@ a .logo {
     box-shadow: 0 0 3px black;
     color: white;
     text-shadow: 0 0 3px black;
-   
+    
 }
 
 #return-btn {
@@ -254,7 +258,7 @@ a .logo {
     padding: 1rem 2.5rem;
     color: white;
     text-shadow: 0 0 3px black;
-  
+    
 }
 
 /* INPUTS */
@@ -305,20 +309,14 @@ a .logo {
     margin: 0.5rem;
 }
 
-.instruction-group {
-    align-items: center;
-    display: flex;
-    margin: 1.5rem 2rem;
 
-    
-}
 
 
 .instruction-group li {
     font-size: 1.6rem;
     max-width: 100%;
     overflow-wrap: break-word;
-  
+    
 }
 
 
@@ -330,23 +328,20 @@ a .logo {
     height: 5rem;
 }
 
-.instruct-group {
-    border-radius: 20px;
-}
 
 
 
 #search-btn {
-    font-size: 1.8rem;
-    padding: 2rem 2.5rem;
+    font-size: 1.6rem;
+    padding: 1.5rem 2rem;
     margin: 4px;
-  
- 
+    
+    
 }
 
 #search-bar {
-    font-size: 2rem;
-    padding: 1rem  2.5rem;
+    font-size: 1.8rem;
+    padding: 0.5rem  0.5rem 0.5rem 1.5rem;
     flex-grow: 1;
 }
 
@@ -356,7 +351,7 @@ a .logo {
 /* ICONS */
 
 .icon {
-    font-size: 6rem;
+    font-size: 5rem;
     margin: 0 1rem;
 }
 
@@ -383,7 +378,7 @@ a .logo {
     margin-bottom: 10rem;
     width: 60vw;
     overflow-x: hidden;
- 
+    
     background: linear-gradient(130deg, rgb(248, 211, 167), rgb(213, 195, 172));
 }
 
@@ -411,7 +406,7 @@ a .logo {
     border-radius: var(--border-radius);
     box-shadow: 0 0 3px black;
     margin: 1.5rem 2rem;
-   
+    
 }
 
 .special-lable{
@@ -448,29 +443,18 @@ a .logo {
     width: 12rem;
     background: linear-gradient(90deg, cyan, rgb(105, 255, 240));
     margin-bottom: 1rem;
-
+    
 }
 
 .recipe-box{
     text-align: center;
     width: 100%;
-   
-  
     
-
+    
+    
+    
 }
 
-
-
-
-.recipe-name {
-    font-size: 3rem;
-    padding: 2rem 4rem;
-    color: white;
-    font-weight: 600;
-    text-shadow: 0 0 3px black;
-    font-family: "Marcellus", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
 
 .option-text {
     font-size: 1.8rem;
@@ -480,7 +464,7 @@ a .logo {
 .time-text {
     font-size: 1.4rem;
     margin: 0 0.5rem;
-   
+    
 }
 
 
@@ -496,6 +480,16 @@ a .logo {
 }
 
 
+/* ___Page3___ */
+
+.recipe-name {
+    font-size: 3rem;
+    padding: 2rem 4rem;
+    color: white;
+    font-weight: 600;
+    text-shadow: 0 0 3px black;
+    font-family: "Marcellus", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
 /* OPTIONAL-CONTAINER */
 
@@ -503,17 +497,18 @@ a .logo {
 
 .optional-container{
     display: flex;
-   
+    
     justify-content: center;
     background: var(--recipe-block-color);
-
-    width: 100%;
+    
+    max-width: 100%;
     padding: 2rem 2rem;
 }
 
 #view-img {
     height: 30rem;
     width: 30rem;
+    
 }
 
 #view-img.img-buff{
@@ -527,6 +522,7 @@ a .logo {
     margin-left: 2rem;
     display: flex;
     flex-direction: column;
+    
 }
 
 .optional-list li {
@@ -542,22 +538,23 @@ a .logo {
 .flex-row.optional-list li {
     margin: 0 2rem 2rem 4rem;
 }
-
-
+.optional-text-box{
+    width: 70%;
+}
 
 
 .description-text{
     font-size: 1.6rem;
     padding: 1rem 2rem;
-    width: 90%;
-    justify-self: center;
-
+    
+    
+    
 }
 .description-text h3 {
     font-family: var(--fancy-font);
     text-shadow: 0 0 2px white;
     overflow-wrap: break-word;
-    max-width: 80%;
+    
     
 }
 
@@ -567,19 +564,25 @@ a .logo {
     
     display: grid;
     grid-template-columns: repeat(4, auto);
-   
+    
     padding: 2rem 4rem;
     font-size: 1.5rem;
     width: 100%;
 }
 
 #ingrediant-container li {
-    margin: 1rem 0;
+    margin: 0.5rem 0;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
     
-   
-    
-
 }
+
+#ingrediant-container li:hover {
+    box-shadow: 0 0 3px black;
+    background-color: rgb(230, 150, 2);
+    color: white;
+    font-size: 1.4rem;
+    }
 
 #instruction-container{
     background:  var(--recipe-block-color);
@@ -591,15 +594,25 @@ a .logo {
 }
 
 #instruction-container li {
-    margin: 1rem 0;
+    margin: 0.5rem 0;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
     overflow-wrap: break-word;
     max-width: 100%;
-    
 }
+
+#instruction-container li:hover {
+box-shadow: 0 0 3px black;
+background-color: rgb(230, 150, 2);
+color: white;
+font-size: 1.8rem;
+}
+
+/* ___PAGE2___ */
+
 /* INGREDIANT LIST */
 
 #ingrediant-list{
-    
     border-radius: 20px;
     box-shadow: 0 0 3px black;
     justify-content: center;
@@ -611,15 +624,12 @@ a .logo {
     margin-top: 2rem;
 }
 
-#recipe-box {
-    border-radius: 10px;
-    justify-content: center;
-    display: grid;
-    grid-template-columns: repeat(5, auto);
-    max-height: 80vh;
-    overflow-y: auto;
+#ingrediant-list .instruction-group{
+    padding: 0.5rem 1rem;
+    margin: 1rem 1rem;
     
 }
+
 
 
 #instruction-list{
@@ -627,16 +637,56 @@ a .logo {
     border-radius: 10px;
     box-shadow: 0 0 3px grey;
     max-width: 50%;
-
-   padding: 0 0.5rem;
+    font-size: 1.6rem;
+    
+    padding: 0 1rem;
 }
 
-/* TEXT-AREA */
-
-.text-area {
-    font-size: 2rem;
-    resize: none;
+.instruction-group {
+    align-items: center;
+    display: flex;
     border-radius: 20px;
+
+}
+
+#instruction-list .instruction-group {
+    margin: 1rem 0;
+    padding: 1rem 3rem;
+    
+    position: relative;
+}
+
+
+
+
+#instruction-list .instruction-group .x-btn{
+    position: absolute;
+    right: 0.5rem;
+      
+}
+#instruction-list .instruction-group:hover {
+    box-shadow: 0 0 3px black;
+}
+
+
+
+
+/* TEXT-AREA */
+.instruct-group {
+    border-radius: 40px;
+    background: lightgray;
+}
+
+.instruct-btn {
+    border-radius: 40px;
+    font-size:1.6rem;
+    padding: 1.5rem 2rem;
+    margin: 6px;
+}
+.text-area {
+    font-size: 1.8rem;
+    resize: none;
+    border-radius: 40px;
     padding: 1rem 1.5rem;
     outline: 0;
     border: 0;
@@ -644,14 +694,14 @@ a .logo {
     height: 10rem;
     flex-grow: 1;
     margin: 3px;
-
+    
 }
 
 .text-area::-webkit-scrollbar-track {
     border-radius: var(--border-radius);
-    background-color: lightgrey;
-    margin-block: 1rem;
-  
+    background-color: rgb(245, 245, 245);
+    margin-block: 2.4rem;
+    
     
 }
 
@@ -663,13 +713,13 @@ a .logo {
 
 .text-area::-webkit-scrollbar {
     margin-block: 1rem;
-  
+    
 }
 
 /* OPTION-BOX */
 
 #option-box {
-   
+    
     display: grid;
     column-gap: 12rem;
     row-gap: 4rem;
@@ -707,6 +757,17 @@ a .logo {
     height: 20rem;
 }
 
+
+#recipe-box {
+    border-radius: 10px;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    max-height: 80vh;
+    overflow-y: auto;
+    
+}
+
 .card {
     background: antiquewhite;
     width: 22rem;
@@ -724,15 +785,15 @@ a .logo {
 }
 
 .card:hover {
-    transform: scale(1.1);
+    transform: scale(1.01);
 }
 
 .card-name-block {
     background: var(--btn-color);
     border-radius: 10px;
-  
+    
     width: 20rem;
-   
+    
     margin-bottom: 0.5rem;
     justify-content: center;
     padding: 0.5rem;
@@ -744,7 +805,7 @@ a .logo {
     color: white;
     font-size: 1.2rem;
     text-shadow: 0 0 3px black;
-
+    
     
 }
 
@@ -764,7 +825,7 @@ a .logo {
     justify-content: end;
     width: 100%;
     
-
+    
 }
 
 .card-bottom i {

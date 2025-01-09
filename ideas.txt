@@ -3,45 +3,39 @@
 ___JS___
 
 
-  
-      <div class="optional-container">
-          <img id="view-img" src="/food-wallpaper.png" alt="" />
-
-          <div class="optional-text-box">
-            <ul class="optional-list">
-              <li>prep time: 3hours & 4mins</li>
-              <li>Cook time: 33hours & 43mins</li>
-              <li>Servings: 4</li>
-            </ul>
-            <div class="description-text">
-              <h3>
-                super yummy and deliocius tacos of the highest quality! yum yum
-                yumy umny uymuy myuymy ymyu
-              </h3>
-            </div>
-          </div>
-        </div>
-       
-
        
          
-       
-
-     
+  make instructions on recipe Creation look better.    
 
 
 
+__OPTIMIZE__
 
-__STEP3__ PAGE3
+-Creation Page-
+
+shrink optional grid,
+starting with the gap space.
+
+shrink ingrediant box.
+
+shrink instruction input & box.
 
 
+-main page-
+
+shrink search bar.
+shirnk card grid.
+and maybe shrink cards.
 
 
+-view page-
+increase recipe width to 90-100%.
 
+shrink img
+decrese fonts on optional box
 
-__final-touch__
+shrink ingrediants grid colmumns
 
-
-
-define character limits
+bugs:
+star hover not working
 

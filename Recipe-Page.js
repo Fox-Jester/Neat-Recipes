@@ -8,7 +8,7 @@ const App = {
         searchBtn: document.querySelector("#search-btn"),
         searchGroup: document.querySelector("#search-group"),
         starFilter: document.querySelector("#star-filter"),
-        
+        addBtn: document.querySelector("#add-recipe")
         
         
     },
@@ -40,6 +40,16 @@ const App = {
     applyListeners() {
         const deleteBtns = document.querySelectorAll(".delete-btn");
         
+
+
+            this.$.addBtn.addEventListener("click", (e) => {
+                if(this.$.recipeBox.childElementCount < 40){
+                    window.location.href = "/creation/recipe-creation.html";
+                }
+                else{
+                    alert("Max Recipes")
+                }
+            })
       
             deleteBtns.forEach((btn) => 
                 btn.addEventListener("click", (e) => {
