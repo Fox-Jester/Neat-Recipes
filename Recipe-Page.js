@@ -44,7 +44,7 @@ const App = {
 
             this.$.addBtn.addEventListener("click", (e) => {
                 if(this.$.recipeBox.childElementCount < 40){
-                    window.location.href = "/Neat-Recipes/creation/recipe-creation.html";
+                    window.location.href = "creation/recipe-creation.html";
                 }
                 else{
                     alert("Max Recipes")
