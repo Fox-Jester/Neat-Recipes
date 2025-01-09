@@ -74,7 +74,7 @@ const App = {
                             const idNum = this.extract(card.id)
                             localStorage.setItem("idData", idNum)
     
-                            window.location.href = "/view/view.html";
+                            window.location.href = "view/view.html";
 
                         }
                     }));
