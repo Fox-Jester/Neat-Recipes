@@ -424,7 +424,7 @@ const App = {
                 return;
             }
             else {
-                window.location.href = "index.html";
+                window.location.href = "/Neat-Recipes/";
                 this.infoSet();
                 localStorage.setItem("createRecipe", true);
             }
