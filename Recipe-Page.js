@@ -243,7 +243,7 @@ function Recipe() {
                 return src
             }
             else {
-                return "/food-wallpaper.png"
+                return "images/food.png"
             }
         }
         
