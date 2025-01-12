@@ -3,39 +3,16 @@
 ___JS___
 
 
-       
-         
-cuztimize page scroll bars
 
 
 
 __OPTIMIZE__
 
--Creation Page-
-
-shrink optional grid,
-starting with the gap space.
-
-shrink ingrediant box.
-
-shrink instruction input & box.
+option list
 
 
--main page-
+make page1 grid bigger or something.
 
-shrink search bar.
-shirnk card grid.
-and maybe shrink cards.
+change description page3.
 
-
--view page-
-increase recipe width to 90-100%.
-
-shrink img
-decrese fonts on optional box
-
-shrink ingrediants grid colmumns
-
-bugs:
-star hover not working
-
+tweak font size on differt screens.

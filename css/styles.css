@@ -523,21 +523,27 @@ a .logo {
     margin-left: 2rem;
     display: flex;
     flex-direction: column;
+  
     
 }
 
 .optional-list li {
     margin: 2rem 0;
 }
+
+
 .flex-row {
     flex-direction: row;
-    justify-content: space-evenly;
-    justify-content: center
+    white-space: nowrap;
+    justify-content: start;
+    font-size: 1.3rem;
+    margin-left: 0;
+    
     
 }
 
 .flex-row.optional-list li {
-    margin: 0 2rem 2rem 4rem;
+    margin: 0 2rem 1rem 4rem;
 }
 .optional-text-box{
     width: 70%;
@@ -1489,28 +1495,28 @@ font-size: 1.8rem;
 
 
     .img-preview{
-        width: 10rem;
-        height: 10rem;
+        width: 12rem;
+        height: 12rem;
     }
     
     .card { 
-        width: 11rem;
+        width: 12.5rem;
         
-        margin: 1rem 1rem;
-        padding: 0.4rem;
+        margin: 1rem 0.5rem;
+        padding: 0.5rem;
     }
 
     .card-name-block {
-        width: 10rem;
+        width: 12rem;
     }
 
     .card-name {
-        font-size: 0.6rem;
+        font-size: 0.7rem;
     }
     .card-list {
-        margin-top: 0.3rem;
-        font-size: 0.6rem;
-        height: 3rem;
+        margin-top: 0.4rem;
+        font-size: 0.7rem;
+        height: 4rem;
     }
     .card-bottom i {
         font-size: 1.4rem;
@@ -1525,7 +1531,7 @@ font-size: 1.8rem;
     }
 
     #header-box {
-        width: 31rem;
+        width: 30rem;
         margin-bottom: 1.5rem;
     }
 
@@ -1559,33 +1565,7 @@ font-size: 1.8rem;
     }
 
 
-    .img-preview{
-        width: 10rem;
-        height: 10rem;
-    }
     
-    .card { 
-        width: 11rem;
-        
-        margin: 1rem 1rem;
-        padding: 0.4rem;
-    }
-
-    .card-name-block {
-        width: 10rem;
-    }
-
-    .card-name {
-        font-size: 0.6rem;
-    }
-    .card-list {
-        margin-top: 0.3rem;
-        font-size: 0.6rem;
-        height: 3rem;
-    }
-    .card-bottom i {
-        font-size: 1.4rem;
-    }
 }
 .hide {
     display: none;

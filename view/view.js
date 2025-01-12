@@ -20,6 +20,7 @@ const App = {
             recipeName: document.querySelector(".recipe-name"),
             optionalContainer: document.querySelector(".optional-container"),
             imgSlot: document.querySelector("#view-img"),
+            optionalTextbox: document.querySelector(".optional-text-box"),
             optionalList: document.querySelector(".optional-list"),
             descriptionText: document.querySelector(".description-text"),
             descriptionInput: document.querySelector("#description-input"),
@@ -170,6 +171,7 @@ const App = {
     optListChange() {
         const optList = document.querySelector(".optional-list")
         if(!this.$.imgData && optList){
+            this.$.optionalTextbox.classList.remove("optional-text-box")
             optList.classList.add("flex-row");
             
         }
